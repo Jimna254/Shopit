@@ -1,0 +1,51 @@
+img {
+  width: 100px;
+  margin: 10px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  margin-top: 100px;
+  gap: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.input-div > input {
+  width: 40vw;
+  border: none;
+  background-color: #d9d9d9;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submit > button {
+  border: none;
+  width: 20vw;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  background-color: blue;
+}
+p {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
