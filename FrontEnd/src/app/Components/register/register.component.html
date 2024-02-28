@@ -1,0 +1,44 @@
+
+<!-- register.component.html -->
+<section>
+    <img src="../../../assets/Logo.png" alt="logo">
+    <hr>
+  <div class="register">
+    <form class="form"  >
+        <h1>Register</h1>
+      <!-- FIRST NAME -->
+      <div class="input-div">
+        <label for="firstName">First name :</label> <br />
+        <input type="text" name="fullName" ngModel required />
+      </div>
+     <!-- LAST NAME -->
+      <div class="input-div">
+        <label for="lastName">Last name :</label> <br />
+        <input type="text" name="lastName" ngModel required />
+      </div>
+    
+      <!-- EMAIL ADDRESS  -->
+      <div class="input-div">
+        <label for="email">Email :</label> <br />
+        <input type="email" name="email" ngModel required />
+      </div>
+    
+      <!-- PHONE NUMBER -->
+      <div class="input-div">
+        <label for="phoneNumber">Phone Number :</label> <br />
+        <input type="text" name="phoneNumber" ngModel required />
+      </div>
+    
+      <!-- PASSWORD -->
+      <div class="input-div">
+        <label for="password">Password :</label> <br />
+        <input type="password" name="password" ngModel required />
+      </div>
+    
+      <!-- SUBMIT -->
+      <button type="submit" class="submit">Register</button>
+    </form>
+  </div>
+  <p>Have an account? <a href="http://login">Login here</a></p>
+</section>
+
