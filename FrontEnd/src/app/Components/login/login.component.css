@@ -49,3 +49,26 @@ p {
   justify-content: center;
   padding: 20px;
 }
+.errors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.success {
+  background-color: #29ab87;
+  padding: 10px;
+  color: white;
+  z-index: 1;
+  position: fixed;
+  font-size: 20px;
+}
+.error {
+  background-color: #ed2939;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 50px;
+  width: 40vw;
+  position: fixed;
+}
