@@ -1,0 +1,37 @@
+section {
+  margin: 60px;
+}
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #d9d9d9;
+  width: 50vw;
+  align-items: center;
+  border-radius: 10px;
+}
+.mainpic > img {
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.submain > img {
+  width: 50px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.description > h1 {
+  color: #eebd0a;
+  font-weight: bold;
+}
+.description > button {
+  background-color: #eebd0a;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { ViewPageComponent } from './view-page/view-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'footer', component: FooterComponent },
+  { path: 'product', component: ViewPageComponent },
 ];
