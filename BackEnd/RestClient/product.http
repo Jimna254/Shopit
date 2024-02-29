@@ -1,0 +1,42 @@
+## Create  Product
+POST http://localhost:3110/products
+Content-Type: application/json
+
+{
+    "productname": "Samsung Frameless",
+    "category_id":"893f6b6f-bbf9-4d92-a41d-2fb36fc6f019",
+    "quantity": "23",
+    "description": "Frameless Screen",
+    "price": "999",
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fle.co.ke%2Fdefault-kit%2Fsamsung-u70au7000-70-inches-smart-uhd-4k-frameless-digital-tv%2F&psig=AOvVaw1M8lVJhfkpXjQZq_376Zpc&ust=1709233794324000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjGwZvezoQDFQAAAAAdAAAAABAR"
+}
+
+### Get all Products
+GET http://localhost:3110/products
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+### Get One
+GET http://localhost:3110/products/8a7a2b4a-b8a1-4bcb-83aa-c871610e2d22
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+
+### Update a Product
+PUT http://localhost:3110/products/update/8a7a2b4a-b8a1-4bcb-83aa-c871610e2d22
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+
+
+{
+     "productname": "James43",
+    "category_id":"Kariuki",
+    "quantity": "jimna@gmail.com",
+    "description": "1234567890",
+    "price": "9999",
+    "image": "ghjkdfguhjhshdff"
+}
+
+### Delete a Product
+
+DELETE http://localhost:3110/products/delete/b9b1595d-0835-45fb-bb4f-e9412e78100a
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
