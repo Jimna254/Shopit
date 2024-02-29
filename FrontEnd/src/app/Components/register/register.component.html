@@ -1,44 +1,115 @@
-
 <!-- register.component.html -->
+<!-- <router-outlet> </router-outlet> -->
+
 <section>
-    <img src="../../../assets/Logo.png" alt="logo">
-    <hr>
+  <img src="../../../assets/Logo.png" alt="logo" />
+  <hr />
+  <div class="errors">
+    <div class="success" *ngIf="success">This is success</div>
+    <div class="error" *ngIf="error">{{ errorMsg }}</div>
+  </div>
   <div class="register">
-    <form class="form"  >
-        <h1>Register</h1>
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <h1>Register</h1>
       <!-- FIRST NAME -->
       <div class="input-div">
         <label for="firstName">First name :</label> <br />
-        <input type="text" name="fullName" ngModel required />
+        <input type="text" formControlName="fullName" />
+        <div
+          *ngIf="
+            registerForm.get('fullName')?.invalid &&
+            registerForm.get('fullName')?.touched
+          "
+          style="color: red"
+        >
+          Full name is required
+        </div>
       </div>
-     <!-- LAST NAME -->
+      <!-- LAST NAME -->
       <div class="input-div">
         <label for="lastName">Last name :</label> <br />
-        <input type="text" name="lastName" ngModel required />
+        <input type="text" formControlName="lastName" />
+        <div
+          *ngIf="
+            registerForm.get('lastName')?.invalid &&
+            registerForm.get('lastName')?.touched
+          "
+          style="color: red;"
+        >
+          Last name is required
+        </div>
       </div>
-    
+
       <!-- EMAIL ADDRESS  -->
       <div class="input-div">
         <label for="email">Email :</label> <br />
-        <input type="email" name="email" ngModel required />
+        <input type="email" formControlName="email" />
+        <div
+          *ngIf="
+            registerForm.get('email')?.invalid &&
+            registerForm.get('email')?.touched &&
+            !registerForm.get('email')?.dirty
+          "
+          style="color: red"
+        >
+          Email is required
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('email')?.invalid &&
+            registerForm.get('email')?.dirty &&
+            registerForm.get('email')?.hasError
+          "
+          style="color: red"
+        >
+          Please enter a valid email address.
+        </div>
       </div>
-    
+
       <!-- PHONE NUMBER -->
       <div class="input-div">
         <label for="phoneNumber">Phone Number :</label> <br />
-        <input type="text" name="phoneNumber" ngModel required />
+        <input type="text" formControlName="phoneNumber" />
+        <div
+          *ngIf="
+            registerForm.get('phoneNumber')?.invalid &&
+            registerForm.get('phoneNumber')?.touched
+          "
+          style="color: red"
+        >
+          Phone number is required
+        </div>
       </div>
-    
+
       <!-- PASSWORD -->
       <div class="input-div">
         <label for="password">Password :</label> <br />
-        <input type="password" name="password" ngModel required />
+        <input type="password" formControlName="password" />
+        <div
+          *ngIf="
+            registerForm.get('password')?.invalid &&
+            registerForm.get('password')?.touched &&
+            !registerForm.get('password')?.dirty
+          "
+          style="color: red"
+        >
+          Password is required
+        </div>
+        <div
+          *ngIf="
+            registerForm.get('password')?.invalid &&
+            registerForm.get('password')?.dirty &&
+            registerForm.get('password')?.touched
+          "
+          style="color: red"
+        >
+          Minimum characters is 8
+        </div>
       </div>
-    
+
       <!-- SUBMIT -->
       <button type="submit" class="submit">Register</button>
     </form>
   </div>
-  <p>Have an account? <a href="http://login">Login here</a></p>
+  <p>Have an account? <a routerLink="/login">Login here</a></p>
 </section>
-
