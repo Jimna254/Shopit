@@ -25,7 +25,9 @@ section {
 }
 .description > h1 {
   color: #eebd0a;
+  text-align: center;
   font-weight: bold;
+  font-size: 20px;
 }
 .description > button {
   background-color: #eebd0a;
@@ -34,4 +36,13 @@ section {
   border-radius: 5px;
   color: white;
   font-size: 15px;
+}
+ul > li {
+  font-size: 18px;
+}
+ul > p {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
 }
