@@ -1,0 +1,27 @@
+### login
+POST http://localhost:3110/users/login
+Content-Type: application/json
+
+{
+    "email": "jimna@gmail.com", 
+    "password": "123456789"
+   
+}
+
+### resetpwd
+PUT http://localhost:3110/users/reset
+Content-Type: application/json
+
+
+
+{
+   "email": "james.kariuki@thejitu.com", 
+    "password": "123456789"
+   
+   
+}
+###Check details of the content
+
+POST http://localhost:3110/users/checkdetails
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik

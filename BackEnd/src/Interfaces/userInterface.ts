@@ -1,7 +1,7 @@
 export interface User {
   user_id: string;
   Fname: string;
-  Lname?: string;
+  Lname: string;
   email: string;
   role: string;
   created_at: string;

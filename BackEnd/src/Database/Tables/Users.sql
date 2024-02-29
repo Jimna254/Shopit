@@ -11,3 +11,12 @@ CREATE TABLE Users (
     created_at DATE NOT NULL,
     isdeleted BIT DEFAULT 0
 );
+
+ALTER TABLE Users
+ADD CONSTRAINT DF_Users_created_at DEFAULT (GETDATE()) FOR created_at;
+
+ALTER TABLE Users
+ADD isWelcomed BIT DEFAULT 0;
+
+
+SELECT * FROM Users
