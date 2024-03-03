@@ -101,3 +101,43 @@ img {
   background-color: #eebd0a;
   color: white;
 }
+.caroussel {
+  width: 700px; 
+  /* height: 200px;  */
+  overflow: hidden; 
+  position: relative;
+}
+
+.caroussel-inner {
+  white-space: nowrap; 
+  position: relative;
+  transition: transform 0.5s ease; 
+  overflow: hidden;
+}
+
+.caroussel-inner > img {
+  width: 60vw;
+  height: 30vh;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 5px;
+}

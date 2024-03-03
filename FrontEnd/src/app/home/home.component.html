@@ -24,21 +24,14 @@
       <li><i class="fa-solid fa-kitchen-set"></i> Kitchen Appliances</li>
     </div>
     <div class="caroussel">
-      <li class="slides">
-        <img src="../../assets/Deals 2.jpeg" alt="" />
-      </li>
-
-      <li class="slides">
-        <img src="../../assets/Deals.jpeg" alt="" />
-      </li>
-
-      <li class="slides">
-        <img src="../../assets/Deals 3.jpeg" alt="" />
-      </li>
-
-      <li class="slides">
-        <img src="../../assets/Deals 4.jpeg" alt="" />
-      </li>
+      <div class="caroussel-inner" #carousselInner>
+        <img src="../../assets/Deals 2.jpeg" alt="This is an image" />
+        <img src="../../assets/Deals.jpeg" alt="This is an image" />
+        <img src="../../assets/Deals 3.jpeg" alt="This is an image" />
+        <img src="../../assets/Deals 4.jpeg" alt="This is an image" />
+      </div>
+      <button class="prev" (click)="prevSlide()">Previous</button>
+  <button class="next" (click)="nextSlide()">Next</button>
     </div>
   </div>
   

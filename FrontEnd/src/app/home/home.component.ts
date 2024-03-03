@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
 
@@ -9,6 +9,29 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
 
+export class HomeComponent implements AfterViewInit {
+
+  @ViewChild('carousselInner') carousselInner!: ElementRef;
+  imageWidth: number = 0;
+  currentIndex: number = 0;
+
+  ngAfterViewInit(): void {
+    this.imageWidth = this.carousselInner.nativeElement.querySelector('img').clientWidth;
+  }
+
+  nextSlide(): void {
+    const numImages = this.carousselInner.nativeElement.querySelectorAll('img').length;
+    if (this.currentIndex < numImages - 1) {
+      this.currentIndex++;
+      this.carousselInner.nativeElement.style.transform = `translateX(-${this.currentIndex * this.imageWidth}px)`;
+    }
+  }
+
+  prevSlide(): void {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.carousselInner.nativeElement.style.transform = `translateX(-${this.currentIndex * this.imageWidth}px)`;
+    }
+  }
 }
