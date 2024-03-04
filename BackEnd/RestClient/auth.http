@@ -3,7 +3,7 @@ POST http://localhost:3110/users/login
 Content-Type: application/json
 
 {
-    "email": "jimna@gmail.com", 
+    "email": "osaibhai431@gmail.com", 
     "password": "123456789"
    
 }
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 POST http://localhost:3110/users/checkdetails
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDdlMjJkYmQtZjk1NS00NmMzLTljMmQtZTlmZDc0ZjAxY2ZkIiwiZW1haWwiOiJvc2FpYmhhaTQzMUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NTY4OTQsImV4cCI6MTcwOTkwMjQ5NH0.4b8p47EHC3_OfTBwVJb0RsCLZsmIAV9fWhqPfwK4wg0

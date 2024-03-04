@@ -8,3 +8,5 @@ CREATE OR ALTER PROCEDURE createCategory(
     INSERT INTO Categories(category_id, categoryname, image)
     VALUES(@category_id, @categoryname, @image)
   END
+
+

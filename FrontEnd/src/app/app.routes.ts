@@ -7,9 +7,11 @@ import { ViewPageComponent } from './Components/view-page/view-page.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { LandingComponent } from './Components/landing/landing.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -17,4 +19,6 @@ export const routes: Routes = [
   { path: 'product', component: ViewPageComponent },
   { path: 'cart', component: CartComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: '', component: LandingComponent },
 ];
