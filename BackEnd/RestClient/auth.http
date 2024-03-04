@@ -3,7 +3,7 @@ POST http://localhost:3110/users/login
 Content-Type: application/json
 
 {
-    "email": "jimna@gmail.com", 
+    "email": "devjameskw@gmail.com", 
     "password": "123456789"
    
 }
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 POST http://localhost:3110/users/checkdetails
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWM4NWQ4NzktOGUyMi00OWJmLWIwOTctM2RhM2FiMjQzN2I4IiwiZW1haWwiOiJqYW1lc2t3MjYwNUBnbWFpbC5jb20iLCJGbmFtZSI6IkphbWVzIiwicm9sZSI6InVzZXIiLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxOTgzNDQsImV4cCI6MTcwOTU0Mzk0NH0.76bwVKlYmpwHP4jCBtUi-3lYHXGqukfuQ6SdVR8jPAo

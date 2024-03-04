@@ -1,0 +1,87 @@
+/* .table {
+  width: 96%;
+  border-collapse: collapse;
+  align-content: center;
+  align-items: center;
+  margin: 10px 10px 0 10px;
+  border-radius: 10px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+
+  vertical-align: middle;
+}
+
+.table tr:nth-child(even) {
+  background-color: #fff5b4;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #bea925;
+  color: rgb(8, 8, 8);
+} */
+
+.table {
+  width: 96%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table tr:nth-child(even) {
+  background-color: #fff5b4;
+}
+
+.table th {
+  background-color: #bea925;
+  color: rgb(8, 8, 8);
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+}
+.actions > button {
+  width: 100%;
+  height: 100%;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table td.actions i.fa-solid {
+  font-size: 16px;
+}
+.table td.actions button:hover {
+  background-color: #f2f2f2; /* Example hover background color */
+}
+
+.addbtn {
+  padding: 5px 8px 5px 8px;
+
+  margin-top: 20px;
+  margin-left: 20px;
+  border-style: none;
+  color: white;
+  background-color: rgb(55, 55, 255);
+}

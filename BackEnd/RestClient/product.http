@@ -3,36 +3,36 @@ POST http://localhost:3110/products
 Content-Type: application/json
 
 {
-    "productname": "Samsung Frameless",
+    "productname": "Hisense Frameless",
     "category_id":"893f6b6f-bbf9-4d92-a41d-2fb36fc6f019",
     "quantity": "23",
     "description": "Frameless Screen",
-    "price": "999",
-    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fle.co.ke%2Fdefault-kit%2Fsamsung-u70au7000-70-inches-smart-uhd-4k-frameless-digital-tv%2F&psig=AOvVaw1M8lVJhfkpXjQZq_376Zpc&ust=1709233794324000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjGwZvezoQDFQAAAAAdAAAAABAR"
+    "price": "99900",
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fkenyatronics.com%2Fview-product%2Fsamsung-65-inch-qled-smart-4k-uhd-smart-hdr10-certified-frameless-tv-2021-model-qa65q65a&psig=AOvVaw3Q3P1HXKDAUoxh2SJT3osY&ust=1709636366588000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPi_0PS52oQDFQAAAAAdAAAAABAJ"
 }
 
 ### Get all Products
 GET http://localhost:3110/products
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NDQxOTksImV4cCI6MTcwOTg4OTc5OX0.RDd6LE1KFaXTavdWwlcGxOhpNA7fed5kRe8AOHdXzJE
 ### Get One
 GET http://localhost:3110/products/8a7a2b4a-b8a1-4bcb-83aa-c871610e2d22
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
 
 ### Update a Product
-PUT http://localhost:3110/products/update/8a7a2b4a-b8a1-4bcb-83aa-c871610e2d22
+PUT http://localhost:3110/products/update/454e1b33-d1e7-4e7e-9e65-5ed99c0b4334
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NDQxOTksImV4cCI6MTcwOTg4OTc5OX0.RDd6LE1KFaXTavdWwlcGxOhpNA7fed5kRe8AOHdXzJE
 
 
 {
-     "productname": "James43",
-    "category_id":"Kariuki",
-    "quantity": "jimna@gmail.com",
-    "description": "1234567890",
-    "price": "9999",
-    "image": "ghjkdfguhjhshdff"
+    "productname": "Samsung Frameless",
+    "category_id":"893f6b6f-bbf9-4d92-a41d-2fb36fc6f019",
+    "quantity": "23",
+    "description": "Frameless Screen",
+    "price": "999",
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fkenyatronics.com%2Fview-product%2Fsamsung-65-inch-qled-smart-4k-uhd-smart-hdr10-certified-frameless-tv-2021-model-qa65q65a&psig=AOvVaw3Q3P1HXKDAUoxh2SJT3osY&ust=1709636366588000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPi_0PS52oQDFQAAAAAdAAAAABAJ"
 }
 
 ### Delete a Product

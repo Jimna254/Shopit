@@ -2,17 +2,17 @@
   <img src="../../../assets/Logo.png" alt="logo" />
   <hr />
   <div class="errors">
-    <div class="success" *ngIf="success">This is success</div>
+    <div class="success" *ngIf="success">{{ successMsg }}</div>
     <div class="error" *ngIf="error">{{ errorMsg }}</div>
   </div>
   <div class="content">
-    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
       <h1>Login</h1>
       <!-- EMAIL ADDRESS  -->
       <div class="input-div">
         <label for="email">Email :</label> <br />
         <input type="email" formControlName="email" />
-         <div
+        <div
           *ngIf="
             loginForm.get('email')?.invalid &&
             loginForm.get('email')?.touched &&
@@ -24,9 +24,7 @@
         </div>
         <div
           *ngIf="
-            loginForm.get('email')?.invalid &&
-            loginForm.get('email')?.dirty &&
-            loginForm.get('email')?.hasError
+            loginForm.get('email')?.invalid && loginForm.get('email')?.dirty
           "
           style="color: red"
         >
@@ -38,7 +36,7 @@
       <div class="input-div">
         <label for="password">Password :</label> <br />
         <input type="password" formControlName="password" />
-         <div
+        <div
           *ngIf="
             loginForm.get('password')?.invalid &&
             loginForm.get('password')?.touched &&

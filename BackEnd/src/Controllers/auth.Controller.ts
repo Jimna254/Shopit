@@ -27,18 +27,19 @@ export const loginUser = async (req: Request, res: Response) => {
     let user = result.recordset[0];
 
     if (!user) {
-      return res.status(404).json({ error: "User not found" });
+      return res.status(201).json({ error: "User not found" });
     }
 
     const correct_pwd = await bcrypt.compare(password, user.password);
     if (!correct_pwd) {
-      return res.status(401).json({ error: "Incorrect password" });
+      return res.status(201).json({ error: "Incorrect password" });
     }
 
     const loginCredentials = {
       user_id: user.user_id,
       email: user.email,
-      name: user.name,
+      Fname: user.Fname,
+      role: user.role,
       isdeleted: user.isdeleted,
     };
 
