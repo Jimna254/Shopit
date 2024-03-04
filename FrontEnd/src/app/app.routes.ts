@@ -1,13 +1,12 @@
 import { Routes } from '@angular/router';
-import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { ViewPageComponent } from './view-page/view-page.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { HomeComponent } from './Components/home/home.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { ViewPageComponent } from './Components/view-page/view-page.component';
 import { CartComponent } from './Components/cart/cart.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { RegisterComponent } from './Components/register/register.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

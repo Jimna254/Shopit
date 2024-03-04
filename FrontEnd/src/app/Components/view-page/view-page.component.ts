@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-view-page',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent,  RouterLink],
+  imports: [NavbarComponent, FooterComponent, RouterLink],
   templateUrl: './view-page.component.html',
   styleUrl: './view-page.component.css',
 })
