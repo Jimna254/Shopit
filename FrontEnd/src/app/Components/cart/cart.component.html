@@ -1,0 +1,33 @@
+<app-navbar> </app-navbar>
+<section>
+  <div class="cart">
+    <h1>CART</h1>
+    <hr />
+    <div class="products-cart">
+      <img src="../../../assets/Tv.jpg" alt="" />
+      <div class="product">
+        <p>Skyworth 43E3A, 43" Full HD Frameless Smart Android TV – Black</p>
+        <div class="remove">
+          <i class="fa-regular fa-trash-can"></i>
+          <p class="remove">Remove</p>
+        </div>
+      </div>
+    </div>
+    <div class="quantity">
+      <button (click)="(quantity('min'))"><strong>-</strong></button>
+      <input class="inputbox" type="text" disabled value="{{productquantity}}" />
+      <button (click)="(quantity('max'))"><strong>+</strong></button>
+      <div class="price">Kshs 30,000</div>
+    </div>
+  </div>
+  <div class="checkout">
+    <h1>CART SUMMARY</h1>
+    <hr />
+    <div class="total">
+      <p>Subtotal</p>
+      <p>Kshs 34,000</p>
+    </div>
+    <hr />
+    <button>CHECKOUT(Kshs 34,000)</button>
+  </div>
+</section>

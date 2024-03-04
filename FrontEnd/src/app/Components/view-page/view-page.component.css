@@ -1,0 +1,88 @@
+section {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 60px;
+}
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #d9d9d9;
+  width: 50vw;
+  align-items: center;
+  border-radius: 10px;
+}
+.mainpic > img {
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.submain > img {
+  width: 50px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.description > h1 {
+  color: #eebd0a;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+.description > button {
+  background-color: #eebd0a;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}
+ul > li {
+  font-size: 18px;
+}
+ul > p {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.similar{
+  display: flex;
+  flex-direction: column;
+  /* gap: 40px; */
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 10px;
+}
+.cards{
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+.cards > h2{
+  color: #eebd0a;
+}
+.cards > img{
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.cards> button{
+  padding: 10px;
+  background-color: #eebd0a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.cards> p{
+  font-size: 20px;
+  font-weight: bold;
+}

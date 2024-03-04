@@ -1,7 +1,14 @@
 import { Routes } from '@angular/router';
-import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
-import { AppComponent } from './app.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { HomeComponent } from './Components/home/home.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { ViewPageComponent } from './Components/view-page/view-page.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { LandingComponent } from './Components/landing/landing.component';
 import { AdmindashboardComponent } from './Components/AdminComponents/admindashboard/admindashboard.component';
 import { DashboardComponent } from './Components/AdminComponents/dashboard/dashboard.component';
 import { AdminProductsViewComponent } from './Components/AdminComponents/admin-products-view/admin-products-view.component';
@@ -16,14 +23,7 @@ import { CategoryupdateComponent } from './Components/AdminComponents/categoryup
 import { CreatecategoryComponent } from './Components/AdminComponents/createcategory/createcategory.component';
 
 export const routes: Routes = [
-  {
-    path: 'app',
-    component: AppComponent,
-    children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-    ],
-  },
+  { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {
@@ -55,4 +55,11 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'product', component: ViewPageComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: '', component: LandingComponent },
 ];
