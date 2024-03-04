@@ -72,12 +72,14 @@ img {
   display: flex;
   padding: 40px;
   justify-content: space-around;
-  /* gap: 10px; */
-  flex-wrap: wrap;
+  overflow-x:visible;
+  overflow: hidden;
+  /* flex-wrap: wrap; */
 }
 .cards {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: #d9d9d9;
   gap: 10px;
   padding: 20px;
@@ -102,24 +104,23 @@ img {
   color: white;
 }
 .caroussel {
-  width: 700px; 
-  /* height: 200px;  */
-  overflow: hidden; 
+  width: 700px;
+  overflow: hidden;
   position: relative;
 }
 
 .caroussel-inner {
-  white-space: nowrap; 
+  white-space: nowrap;
   position: relative;
-  transition: transform 0.5s ease; 
-  overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
 .caroussel-inner > img {
   width: 60vw;
-  height: 30vh;
+  height: 50vh;
   object-fit: cover;
   vertical-align: top;
+  border-radius: 10px;
 }
 
 .prev,
@@ -135,7 +136,7 @@ img {
 }
 
 .prev {
-  left: 30px;
+  left: 15px;
 }
 
 .next {

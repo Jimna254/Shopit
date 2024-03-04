@@ -16,16 +16,33 @@ section {
 .product {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: left;
+}
+.remove {
+  color: #eebd0a;
+  font-weight: bold;
 }
 .products-cart > img {
   width: 250px;
 }
 .quantity {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.remove {
+.quantity > button {
+  padding: 5px;
+  color: white;
+  background-color: #eebd0a;
+  border-radius: 3px;
+}
+.quantity > input {
+  width: 3vw;
+  padding: 5px;
+  text-align: center;
+}
+.quantity .remove {
   display: flex;
 }
 .checkout {

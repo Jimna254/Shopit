@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewPageComponent } from './view-page/view-page.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'product', component: ViewPageComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
