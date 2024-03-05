@@ -85,3 +85,10 @@
   color: white;
   background-color: rgb(55, 55, 255);
 }
+
+.product-image {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+}

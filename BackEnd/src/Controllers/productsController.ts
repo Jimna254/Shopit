@@ -44,9 +44,9 @@ export const createProduct = async (req: Request, res: Response) => {
           .input("product_id", mssql.VarChar, id)
           .input("productname", mssql.VarChar, productname)
           .input("category_id", mssql.VarChar, category_id)
-          .input("quantity", mssql.VarChar, quantity)
+          .input("quantity", mssql.Int, quantity)
           .input("description", mssql.VarChar, description)
-          .input("price", mssql.VarChar, price)
+          .input("price", mssql.Decimal, price)
           .input("image", mssql.VarChar, image)
           .execute("createProduct")
       ).rowsAffected;

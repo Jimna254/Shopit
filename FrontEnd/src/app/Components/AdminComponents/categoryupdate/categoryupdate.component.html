@@ -1,1 +1,43 @@
-<p>categoryupdate works!</p>
+<div class="register">
+  <div class="successmsg" *ngIf="visible2">
+    {{ sucessMsg }}
+  </div>
+  <form
+    [formGroup]="updateCategoryForm"
+    (ngSubmit)="updatecategory()"
+    class="form-container"
+  >
+    <h1 style="text-align: center">Update Category</h1>
+    <div class="form-group">
+      <label class="label">Category Name:</label>
+      <input type="text" formControlName="categoryname" class="input" />
+      <div
+        *ngIf="
+          updateCategoryForm.get('categoryname')?.invalid &&
+          updateCategoryForm.get('categoryname')?.touched
+        "
+        class="error-message"
+      >
+        Category Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Image:</label>
+      <input type="text" formControlName="image" class="input" />
+      <div
+        *ngIf="
+          updateCategoryForm.get('image')?.invalid &&
+          updateCategoryForm.get('image')?.touched
+        "
+        class="error-message"
+      >
+        Category Image is required
+      </div>
+    </div>
+
+    <div class="form-group flex items-center justify-between">
+      <input type="submit" class="submit-button" value="Update Category" />
+    </div>
+  </form>
+</div>

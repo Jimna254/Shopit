@@ -56,7 +56,7 @@ export class LoginComponent {
             if (res.info.role == 'admin') {
               this.router.navigate(['admin']);
             } else if (res.info.role == 'user') {
-              this.router.navigate(['user']);
+              this.router.navigate(['home']);
             } else {
               {
                 console.log('Role Info Not Available');
