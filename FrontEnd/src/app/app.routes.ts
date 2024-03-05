@@ -9,6 +9,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { LandingComponent } from './Components/landing/landing.component';
+import { WildcardComponent } from './Components/wildcard/wildcard.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,4 +22,5 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'shop', component: ShopComponent },
   { path: '', component: LandingComponent },
+  { path: '**', component: WildcardComponent },
 ];
