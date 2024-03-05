@@ -6,12 +6,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
+import { registerUser } from '../../Interfaces/userInterface';
+import { log } from 'console';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterLink,RouterOutlet],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink, RouterOutlet],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
@@ -20,29 +23,41 @@ export class RegisterComponent {
   error = false;
   success = false;
 
+  successMsg!: String;
   errorMsg!: String;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      fullName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      Fname: ['', Validators.required],
+      Lname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(8)],
+      phone_number: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
-  registerUser() {
-    if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
-    } else {
-      this.error = true;
-      this.errorMsg = 'Please fill in all the fields';
+  register(details: registerUser) {
+    console.log(details.password);
+
+    this.authService.registerUser(this.registerForm.value).subscribe((res) => {
+      console.log(res);
       setTimeout(() => {
-        this.error = false;
-      }, 3000); 
-    }
-    }
+        if (res.message) {
+          this.success = true;
+          this.successMsg = res.message;
+
+          this.router.navigate(['login']);
+        } else if (res.messageerror) {
+          this.error = true;
+          this.errorMsg = res.messageerror;
+        }
+      }, 2000);
+    });
   }
+}

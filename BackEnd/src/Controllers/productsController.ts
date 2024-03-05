@@ -114,15 +114,17 @@ export const updateProduct = async (req: Request, res: Response) => {
       image,
     }: Product = req.body;
     console.log("ProductID:", id);
-    let result = await Connection.execute("updateproduct", {
-      product_id: id,
-      productname,
-      category_id,
-      quantity,
-      description,
-      price,
-      image,
-    });
+    let result = (
+      await Connection.execute("updateproduct", {
+        product_id: id,
+        productname,
+        category_id,
+        quantity,
+        description,
+        price,
+        image,
+      })
+    ).recordset;
     return res.json({ result, message: "Product updated successfully" });
   } catch (error) {
     console.log("Error in getting data from database", error);

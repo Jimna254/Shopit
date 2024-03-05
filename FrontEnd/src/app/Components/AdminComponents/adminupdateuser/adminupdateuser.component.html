@@ -1,0 +1,70 @@
+<div class="register">
+  <div class="successmsg" *ngIf="visible2">
+    {{ successMsg }}
+  </div>
+  <form
+    [formGroup]="updateUserForm"
+    (ngSubmit)="updateUser()"
+    class="form-container"
+  >
+    <h1 style="text-align: center">Update User</h1>
+    <div class="form-group">
+      <label class="label">First Name:</label>
+      <input type="text" formControlName="Fname" class="input" />
+      <div
+        *ngIf="
+          updateUserForm.get('name')?.invalid &&
+          updateUserForm.get('name')?.touched
+        "
+        class="error-message"
+      >
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Last Name:</label>
+      <input type="text" formControlName="Lname" class="input" />
+      <div
+        *ngIf="
+          updateUserForm.get('name')?.invalid &&
+          updateUserForm.get('name')?.touched
+        "
+        class="error-message"
+      >
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Email</label>
+      <input type="email" formControlName="email" class="input" />
+      <div
+        *ngIf="
+          updateUserForm.get('email')?.invalid &&
+          updateUserForm.get('email')?.touched
+        "
+        class="error-message"
+      >
+        Email is invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="label">Phone number</label>
+      <input type="text" formControlName="phone_number" class="input" />
+      <div
+        *ngIf="
+          updateUserForm.get('phone_number')?.invalid &&
+          updateUserForm.get('phone_number')?.touched
+        "
+        class="error-message"
+      >
+        Phone number is required
+      </div>
+    </div>
+
+    <div class="form-group flex items-center justify-between">
+      <input type="submit" class="submit-button" value="Update" />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,121 @@
+<div class="register">
+  <div class="successmsg" *ngIf="visible2">
+    {{ sucessMsg }}
+  </div>
+  <form
+    [formGroup]="addProductForm"
+    (ngSubmit)="createProduct()"
+    class="form-container"
+  >
+    <h1 style="text-align: center">Add Product</h1>
+    <div class="form-group">
+      <label class="label">Product Name:</label>
+      <input type="text" formControlName="productname" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('productname')?.invalid &&
+          addProductForm.get('productname')?.touched
+        "
+        class="error-message"
+      >
+        Product Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select formControlName="category_id" id="category" class="input">
+        <option value="">Select a category</option>
+        <option
+          *ngFor="let category of categoriesArr"
+          [value]="category.category_id"
+        >
+          {{ category.categoryname }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          addProductForm.get('category_id')?.invalid &&
+          addProductForm.get('category_id')?.touched
+        "
+        class="error-message"
+      >
+        Category is required
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label class="label">CategoryId:</label>
+      <input type="text" formControlName="category_id" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('category_id')?.invalid &&
+          addProductForm.get('category_id')?.touched
+        "
+        class="error-message"
+      >
+        Category Id is required
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <label class="label">Quantity:</label>
+      <input type="text" formControlName="quantity" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('quantity')?.invalid &&
+          addProductForm.get('quantity')?.touched
+        "
+        class="error-message"
+      >
+        Quantity is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Description:</label>
+      <input type="text" formControlName="description" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('description')?.invalid &&
+          addProductForm.get('description')?.touched
+        "
+        class="error-message"
+      >
+        Description is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Price:</label>
+      <input type="text" formControlName="price" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('price')?.invalid &&
+          addProductForm.get('price')?.touched
+        "
+        class="error-message"
+      >
+        Price is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Image:</label>
+      <input type="text" formControlName="image" class="input" />
+      <div
+        *ngIf="
+          addProductForm.get('image')?.invalid &&
+          addProductForm.get('image')?.touched
+        "
+        class="error-message"
+      >
+        Image is required
+      </div>
+    </div>
+
+    <div class="form-group flex items-center justify-between">
+      <input type="submit" class="submit-button" value="Add Product" />
+    </div>
+  </form>
+</div>

@@ -3,9 +3,9 @@ POST http://localhost:3110/users
 Content-Type: application/json
 
 {
-    "Fname": "Osai",
-    "Lname":"bhai",
-    "email": "osaibhai431@gmail.com",
+    "Fname": "James",
+    "Lname":"Kariuki",
+    "email": "devjameskw@gmail.com",
     "phone_number": "05678899",
     "password": "123456789"
    
@@ -14,12 +14,12 @@ Content-Type: application/json
 ### Get all Users
 GET http://localhost:3110/users
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDdlMjJkYmQtZjk1NS00NmMzLTljMmQtZTlmZDc0ZjAxY2ZkIiwiZW1haWwiOiJvc2FpYmhhaTQzMUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NTY4OTQsImV4cCI6MTcwOTkwMjQ5NH0.4b8p47EHC3_OfTBwVJb0RsCLZsmIAV9fWhqPfwK4wg0
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk0OTMyNzQsImV4cCI6MTcwOTgzODg3NH0.hLvrILEbp1UgNTKjCjdrKHi-5bVbAZR9x6zmSO8VIIw
 
 ### Get One
-GET http://localhost:3110/users/d7e22dbd-f955-46c3-9c2d-e9fd74f01cfd
+GET http://localhost:3110/users/2deb31ed-d2d3-44f9-9412-d5119e9a59cd
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDdlMjJkYmQtZjk1NS00NmMzLTljMmQtZTlmZDc0ZjAxY2ZkIiwiZW1haWwiOiJvc2FpYmhhaTQzMUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NTY4OTQsImV4cCI6MTcwOTkwMjQ5NH0.4b8p47EHC3_OfTBwVJb0RsCLZsmIAV9fWhqPfwK4wg0
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk0OTMyNzQsImV4cCI6MTcwOTgzODg3NH0.hLvrILEbp1UgNTKjCjdrKHi-5bVbAZR9x6zmSO8VIIw
 ### Update a user
 PUT http://localhost:3110/users/update/0c286855-05d9-4b0d-8dcf-d83a0a6311ff
 Content-Type: application/json
@@ -36,6 +36,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDdlMjJkYmQtZjk1NS00
 
 ### Delete a user
 
-DELETE http://localhost:3110/users/delete/d7e22dbd-f955-46c3-9c2d-e9fd74f01cfd
+DELETE http://localhost:3110/users/delete/34ef96c4-5d98-4d6b-a1a2-2e42a1b10ae5
 Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk0OTMyNzQsImV4cCI6MTcwOTgzODg3NH0.hLvrILEbp1UgNTKjCjdrKHi-5bVbAZR9x6zmSO8VIIw
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDdlMjJkYmQtZjk1NS00NmMzLTljMmQtZTlmZDc0ZjAxY2ZkIiwiZW1haWwiOiJvc2FpYmhhaTQzMUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NTY4OTQsImV4cCI6MTcwOTkwMjQ5NH0.4b8p47EHC3_OfTBwVJb0RsCLZsmIAV9fWhqPfwK4wg0
