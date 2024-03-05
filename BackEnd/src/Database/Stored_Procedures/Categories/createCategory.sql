@@ -1,12 +1,12 @@
-CREATE OR ALTER PROCEDURE createCategory(
-    @category_id VARCHAR(250),
-    @categoryname VARCHAR(250),
-    @image VARCHAR(250)
+CREATE OR ALTER PROCEDURE createandInsertCart(
+    @cart_id VARCHAR(250),
+    @product_id VARCHAR(250),
+    @user_id VARCHAR(250),
+    @quantity INT
   ) 
   AS
   BEGIN
-    INSERT INTO Categories(category_id, categoryname, image)
-    VALUES(@category_id, @categoryname, @image)
+    INSERT INTO Cart(cart_id, product_id, user_id, quantity )
+    VALUES(@cart_id, @product_id, @user_id, @quantity)
   END
-
 

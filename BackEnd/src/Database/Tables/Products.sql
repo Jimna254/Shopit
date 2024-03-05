@@ -15,5 +15,7 @@ FOREIGN KEY (category_id)
 REFERENCES Categories(category_id);
 
 
-DELETE FROM Products;
+ALTER TABLE Products ALTER COLUMN quantity INT;
+ALTER TABLE Products ALTER COLUMN price DECIMAL(10, 2);
+
 

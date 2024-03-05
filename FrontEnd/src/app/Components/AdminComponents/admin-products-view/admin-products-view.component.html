@@ -18,12 +18,13 @@
       <tr *ngFor="let product of productsArr; let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{ product.productname }}</td>
-
-        <img
-          src="{{ product.image }}"
-          alt="{{ product.productname }}"
-          class="product-image"
-        />
+        <td>
+          <img
+            src="{{ product.image }}"
+            alt="{{ product.productname }}"
+            class="product-image"
+          />
+        </td>
 
         <td>{{ product.CategoryName }}</td>
         <td>{{ product.quantity }}</td>

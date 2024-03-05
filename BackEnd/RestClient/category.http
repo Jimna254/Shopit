@@ -7,14 +7,14 @@ Content-Type: application/json
     "image": "https://media.istockphoto.com/id/178716575/photo/mobile-devices.jpg?s=612x612&w=0&k=20&c=9YyINgAbcmjfY_HZe-i8FrLUS43-qZh6Sx6raIc_9vQ="
 }
 
-### Get all Categorys
+### Get all Categories
 GET http://localhost:3110/categories
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NjIwMzgsImV4cCI6MTcwOTkwNzYzOH0.KvVvx5KEytiLk84XcfJmiaOjyDOte4AZX9eCIfL0TQA
 ### Get One
-GET http://localhost:3110/categories/c5c2412d-ebaa-4ba3-98f3-57010c3ea576
+GET http://localhost:3110/categories/81d8dcb7-88aa-427d-ad04-8e21a39eaf0b
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGMyODY4NTUtMDVkOS00YjBkLThkY2YtZDgzYTBhNjMxMWZmIiwiZW1haWwiOiJqaW1uYUBnbWFpbC5jb20iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDkxMjA3MTIsImV4cCI6MTcwOTQ2NjMxMn0.MuW9er349iQ04ju4nspottdVQuPsisS5Jqdb1Fuzqik
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk1NjIwMzgsImV4cCI6MTcwOTkwNzYzOH0.KvVvx5KEytiLk84XcfJmiaOjyDOte4AZX9eCIfL0TQA
 
 ### Update a Category
 PUT http://localhost:3110/categories/update/c5c2412d-ebaa-4ba3-98f3-57010c3ea576
