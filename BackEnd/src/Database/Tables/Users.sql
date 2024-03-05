@@ -21,3 +21,4 @@ ADD isWelcomed BIT DEFAULT 0;
 
 SELECT * FROM Users
 
+DELETE FROM Users

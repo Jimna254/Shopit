@@ -33,10 +33,11 @@ img {
 }
 .categories > li {
   font-size: 20px;
+  display: flex;
+  gap: 5px;
 }
 .categories > li:hover {
   color: #eebd0a;
-  text-decoration: underline;
   cursor: pointer;
 }
 .logout {

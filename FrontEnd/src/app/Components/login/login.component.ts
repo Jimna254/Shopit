@@ -6,7 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router, RouterLink} from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
+import { loginDetails } from '../../Interfaces/userInterface';
 
 @Component({
   selector: 'app-login',
@@ -19,26 +21,50 @@ export class LoginComponent {
   loginForm!: FormGroup;
   error = false;
   success = false;
+  successMsg!: string;
   errorMsg!: string;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
-  loginUser() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      // You can navigate to another page after successful login
-      this.router.navigate(['/home']);
-    } else {
-      this.error = true;
-      this.errorMsg = 'Please fill in all the fields';
-      setTimeout(() => {
-        this.error = false;
-      }, 3000);
-    }
+  login(details: loginDetails) {
+    console.log('Login Details:' + details);
+    this.authService.loginUser(details).subscribe((res) => {
+      if (res.error) {
+        this.error = true;
+        this.errorMsg = res.error;
+
+        setTimeout(() => {
+          this.error = false;
+        }, 3500);
+      } else if (res.message) {
+        this.success = true;
+        this.successMsg = res.message;
+
+        localStorage.setItem('token', res.token);
+        // Redirect to dashboard page after successful login
+        this.authService.readToken(res.token).subscribe((res) => {
+          setTimeout(() => {
+            if (res.info.role == 'admin') {
+              this.router.navigate(['admin']);
+            } else if (res.info.role == 'user') {
+              this.router.navigate(['home']);
+            } else {
+              {
+                console.log('Role Info Not Available');
+              }
+            }
+          }, 3000);
+        });
+      }
+    });
   }
 }

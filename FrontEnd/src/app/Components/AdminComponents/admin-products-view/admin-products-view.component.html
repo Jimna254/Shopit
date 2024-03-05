@@ -1,0 +1,49 @@
+<div class="container mt-3">
+  <button class="addbtn" routerLink="/admin/createProduct">Add Product</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product Number:</th>
+        <th>Product Name:</th>
+        <th>Product Image</th>
+        <th>Category Name</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productsArr; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.productname }}</td>
+
+        <img
+          src="{{ product.image }}"
+          alt="{{ product.productname }}"
+          class="product-image"
+        />
+
+        <td>{{ product.CategoryName }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td class="actions">
+          <button
+            class="btnEdit"
+            routerLink="/admin/updateProduct/{{ product.product_id }}"
+          >
+            <i
+              class="fa-solid fa-pen-to-square"
+              style="color: rgb(255, 187, 0)"
+            ></i>
+          </button>
+          <button class="btnDelete" (click)="deleteProduct(product.product_id)">
+            <i class="fa-solid fa-trash" style="color: rgb(255, 0, 0)"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,40 +1,41 @@
-<!-- register.component.html -->
-<!-- <router-outlet> </router-outlet> -->
-
 <section>
   <img src="../../../assets/Logo.png" alt="logo" />
   <hr />
   <div class="errors">
-    <div class="success" *ngIf="success">This is success</div>
+    <div class="success" *ngIf="success">{{ successMsg }}</div>
     <div class="error" *ngIf="error">{{ errorMsg }}</div>
   </div>
   <div class="register">
-    <form class="form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+    <form
+      class="form"
+      [formGroup]="registerForm"
+      (ngSubmit)="register(registerForm.value)"
+    >
       <h1>Register</h1>
       <!-- FIRST NAME -->
       <div class="input-div">
         <label for="firstName">First name :</label> <br />
-        <input type="text" formControlName="fullName" />
+        <input type="text" formControlName="Fname" />
         <div
           *ngIf="
-            registerForm.get('fullName')?.invalid &&
-            registerForm.get('fullName')?.touched
+            registerForm.get('Fname')?.invalid &&
+            registerForm.get('Fname')?.touched
           "
           style="color: red"
         >
-          Full name is required
+          First is required
         </div>
       </div>
       <!-- LAST NAME -->
       <div class="input-div">
         <label for="lastName">Last name :</label> <br />
-        <input type="text" formControlName="lastName" />
+        <input type="text" formControlName="Lname" />
         <div
           *ngIf="
             registerForm.get('lastName')?.invalid &&
             registerForm.get('lastName')?.touched
           "
-          style="color: red;"
+          style="color: red"
         >
           Last name is required
         </div>
@@ -69,11 +70,11 @@
       <!-- PHONE NUMBER -->
       <div class="input-div">
         <label for="phoneNumber">Phone Number :</label> <br />
-        <input type="text" formControlName="phoneNumber" />
+        <input type="text" formControlName="phone_number" />
         <div
           *ngIf="
-            registerForm.get('phoneNumber')?.invalid &&
-            registerForm.get('phoneNumber')?.touched
+            registerForm.get('phone_number')?.invalid &&
+            registerForm.get('phone_number')?.touched
           "
           style="color: red"
         >

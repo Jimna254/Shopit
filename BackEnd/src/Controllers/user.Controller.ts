@@ -58,7 +58,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
       console.log(result);
       return res.status(201).json({
-        message: `${Fname}Account was created succesfully.`,
+        message: `${Fname} Account was created succesfully.`,
       });
     }
   } catch (err) {
@@ -111,14 +111,16 @@ export const updateUser = async (req: Request, res: Response) => {
 
     const { Fname, Lname, email, phone_number }: User = req.body;
     console.log("User ID:", id);
-    let result = await Connection.execute("updateUser", {
-      user_id: id,
-      Fname,
-      Lname,
-      email,
-      phone_number,
-    });
-    return res.json({ result, message: "User updated successfully" });
+    let result = (
+      await Connection.execute("updateUser", {
+        user_id: id,
+        Fname,
+        Lname,
+        email,
+        phone_number,
+      })
+    ).recordset;
+    return res.json({ message: "User updated successfully" });
   } catch (error) {
     console.log("Error in getting data from database", error);
     return res.status(201).json({ message: "There was an issue updatinguser" });
@@ -133,7 +135,7 @@ export const deleteUser = async (req: Request, res: Response) => {
     let user = (await Connection.execute("deleteUser", { user_id: id }))
       .rowsAffected;
 
-    return res.json({ user });
+    return res.json({ message: "User Deleted Successfully" });
   } catch (error) {
     console.log("Error in getting data from database", error);
     return res

@@ -10,7 +10,7 @@ CREATE OR ALTER PROCEDURE updateProduct(
 AS
 BEGIN
     UPDATE Products SET 
-        productname = @product_id,
+        productname = @productname,
         category_id = @category_id,
         quantity =@quantity ,
         description = @description,
