@@ -1,1 +1,60 @@
-<p>admin-orders-view works!</p>
+<div class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order No:</th>
+        <th>UserName:</th>
+        <th>Total Price</th>
+        <th>Date Created:</th>
+        <th>Status</th>
+        <th>Cancelled</th>
+        <th>Mark as In Transit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of ordersArr; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.user_name }}</td>
+        <td>{{ order.total_prices }}</td>
+        <td>{{ order.order_created_at | date }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.isCancel }}</td>
+        <td class="actions">
+          <div class="checkbox-wrapper">
+            <input
+              id="terms-checkbox-37"
+              name="checkbox"
+              type="checkbox"
+              (click)="onCheckboxClicked(order.order_id)"
+            />
+            <label class="terms-label" for="terms-checkbox-37">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 200 200"
+                class="checkbox-svg"
+              >
+                <mask fill="white" id="path-1-inside-1_476_5-37">
+                  <rect height="200" width="200"></rect>
+                </mask>
+                <rect
+                  mask="url(#path-1-inside-1_476_5-37)"
+                  stroke-width="40"
+                  class="checkbox-box"
+                  height="200"
+                  width="200"
+                ></rect>
+                <path
+                  stroke-width="15"
+                  d="M52 111.018L76.9867 136L149 64"
+                  class="checkbox-tick"
+                ></path>
+              </svg>
+              <span class="label-text">Confirm Order</span>
+            </label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
