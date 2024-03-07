@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -13,13 +13,14 @@ import { CategoriesService } from '../../../Services/categories.service';
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css',
 })
 export class AddProductComponent {
   addProductForm!: FormGroup;
   sucessMsg!: string;
+  errorMsg!: string;
   categoriesArr: any[] = [];
 
   visible = false;
@@ -52,8 +53,9 @@ export class AddProductComponent {
             this.visible2 = true;
             this.sucessMsg = Res.message;
             setTimeout(() => {
-              this.visible2 = false;
-            }, 3000);
+              this.visible = true;
+              this.errorMsg = Res.message;
+            }, 2000);
           }
         },
         error: (error) => {

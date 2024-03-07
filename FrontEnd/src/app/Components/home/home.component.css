@@ -55,6 +55,8 @@ img {
   background-color: #f5f5f5;
   border-radius: 10px;
   list-style: none;
+  height: 45vh;
+  overflow-y: scroll;
 }
 .photo > img {
   width: 70vw;
@@ -75,11 +77,12 @@ img {
   justify-content: space-around;
   overflow-x: visible;
   overflow: hidden;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .cards {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   background-color: #d9d9d9;
   gap: 10px;
@@ -91,8 +94,8 @@ img {
   width: 15vw;
   height: 30vh;
   object-fit: cover;
-  /* border: 2px solid blue; */
   border-radius: 10px;
+  align-self: center;
 }
 .cards > button {
   align-self: center;
@@ -151,5 +154,44 @@ img {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+@media (max-width: 800px) {
+  section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .display {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .categories > li {
+    font-size: 15px;
+  }
+  .caroussel {
+    width: 60vw;
+  }
+  .main {
+    flex-wrap: wrap;
+  }
+  .cards {
+    gap: 5px;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px;
+  }
+  .cards > h2 {
+    font-size: 15px;
+  }
+  .cards > img {
+    width: 80%;
+    height: 50%;
+  }
+  .cards > button {
+    width: 20vw;
+  }
+  .main {
+    flex-wrap: wrap;
   }
 }

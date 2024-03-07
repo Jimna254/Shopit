@@ -2,6 +2,9 @@
   <div class="successmsg" *ngIf="visible2">
     {{ sucessMsg }}
   </div>
+  <div class="errormsg" *ngIf="visible">
+    {{ errorMsg }}
+  </div>
   <form
     [formGroup]="addProductForm"
     (ngSubmit)="createProduct()"

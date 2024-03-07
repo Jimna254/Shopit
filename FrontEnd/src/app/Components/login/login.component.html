@@ -11,7 +11,7 @@
       <!-- EMAIL ADDRESS  -->
       <div class="input-div">
         <label for="email">Email :</label> <br />
-        <input type="email" formControlName="email" />
+        <input type="email" formControlName="email" data-cy="email-link" />
         <div
           *ngIf="
             loginForm.get('email')?.invalid &&
@@ -35,7 +35,7 @@
       <!-- PASSWORD -->
       <div class="input-div">
         <label for="password">Password :</label> <br />
-        <input type="password" formControlName="password" />
+        <input type="password" formControlName="password" data-cy="password-link" />
         <div
           *ngIf="
             loginForm.get('password')?.invalid &&
@@ -60,7 +60,7 @@
 
       <!-- SUBMIT -->
       <div class="submit">
-        <button type="submit" class="submit">Login</button>
+        <button type="submit" class="submit" data-cy="submit-btn">Login</button>
       </div>
     </form>
   </div>
