@@ -35,6 +35,7 @@ export class AdminCategoriesViewComponent implements OnInit {
     this.categories.deleteCategory(id).subscribe((res) => {
       console.log(res);
       this.fetchCategories();
+      this.isPopupOpen = false;
     });
   }
 

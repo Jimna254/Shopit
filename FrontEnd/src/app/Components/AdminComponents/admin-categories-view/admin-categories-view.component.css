@@ -87,11 +87,18 @@
   border-radius: 50%;
 }
 
-.popup button {
+.dlt {
   padding: 10px;
   background-color: #bea925;
   color: white;
   border: none;
   border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dlt {
+  color: #ddd;
+  background-color: #be2525;
+
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }

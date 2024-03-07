@@ -77,7 +77,6 @@ img {
   justify-content: space-around;
   overflow-x: visible;
   overflow: hidden;
-  flex-wrap: wrap;
 }
 .cards {
   display: flex;

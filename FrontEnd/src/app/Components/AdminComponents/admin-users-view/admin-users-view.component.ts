@@ -33,6 +33,7 @@ export class AdminUsersViewComponent {
       console.log(res);
 
       this.fetchUsers();
+      this.isPopupOpen = false;
     });
   }
 
