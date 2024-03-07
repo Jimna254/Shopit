@@ -3,7 +3,7 @@ POST http://localhost:3110/products
 Content-Type: application/json
 
 {
-    "productname": "Synix Frameless",
+    "productname": "LG Frameless",
     "category_id":"893f6b6f-bbf9-4d92-a41d-2fb36fc6f019",
     "quantity": "23",
     "description": "Frameless Screen",

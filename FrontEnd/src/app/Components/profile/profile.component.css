@@ -1,7 +1,7 @@
 section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 30px;
 }
 form {
@@ -34,4 +34,35 @@ form > h1 {
 
 .inputs > label {
   font-size: 20px;
+}
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eebd0a;
+  color: white;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #d9d9d9;
+  align-self: start;
+  border-radius: 10px;
+}
+.account > p {
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  section {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 12px;
+  }
+  form {
+    font-size: 12px;
+  }
 }

@@ -10,4 +10,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
 })
-export class ProfileComponent {}
+export class ProfileComponent {
+   
+}
+

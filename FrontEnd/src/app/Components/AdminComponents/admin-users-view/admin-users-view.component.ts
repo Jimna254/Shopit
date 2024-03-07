@@ -31,8 +31,8 @@ export class AdminUsersViewComponent {
   deleteUser(id: string) {
     this.userService.deleteUser(id).subscribe((res) => {
       console.log(res);
-
       this.fetchUsers();
+      this.isPopupOpen=false;
     });
   }
 

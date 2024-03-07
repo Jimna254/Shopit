@@ -56,7 +56,7 @@ describe("Account created successfully", () => {
 
 // test for getAllUsers
 
-describe('Get all categories', () => {
+describe('Get all users', () => {
     let res: any;
     
     beforeEach(() => {

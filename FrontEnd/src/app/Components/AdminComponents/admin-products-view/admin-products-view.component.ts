@@ -36,6 +36,7 @@ export class AdminProductsViewComponent implements OnInit {
     this.products.deleteProduct(id).subscribe((res) => {
       console.log(res);
       this.fetchProducts();
+      this.isPopupOpen = false;
     });
   }
 
