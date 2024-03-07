@@ -1,15 +1,17 @@
-
-
-.item{
-    display: flex;
-    gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.products {
+  display: flex;
+  gap: 20px;
 }
-.cards{
+.item {
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cards {
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -19,20 +21,35 @@
   align-items: center;
   background-color: #d9d9d9;
 }
-.cards > h2{
+.cards > h2 {
   color: #eebd0a;
 }
-.cards > img{
+.cards > img {
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-.cards> p{
+.cards > p {
   font-size: 20px;
   font-weight: bold;
 }
-.products > h1{
-    text-align: center;
-    padding-top: 30px;
-    font-size: 40px;
+.products > h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 40px;
+}
+.view-product-btn {
+  background-color: #eebd0a;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.view-product-btn:hover {
+  background-color: #b3a100;
 }

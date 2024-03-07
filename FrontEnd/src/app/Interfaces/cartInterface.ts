@@ -7,3 +7,24 @@ export interface Cart {
   price: number;
   description: string;
 }
+
+export interface OneUsercartResponse {
+  cartDetails: [
+    {
+      cart_id: string;
+      quantity: number;
+      product_id: string;
+      name: string;
+      price: number;
+    }
+  ];
+  error: {
+    name: string;
+    message: string;
+  };
+}
+
+export interface deleteItemCart {
+  cart_id: string;
+  product_id: string;
+}

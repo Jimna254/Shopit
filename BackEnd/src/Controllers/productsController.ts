@@ -80,6 +80,31 @@ export const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
+export const getProductsbyCategoryId = async (req: Request, res: Response) => {
+  try {
+    const category_id = req.params.category_id;
+
+    let products = (
+      await Connection.execute("getProductsbyCategoryId", {
+        category_id: category_id,
+      })
+    ).recordset;
+
+    if (products.length > 0) {
+      return res.json({ products });
+    } else {
+      return res.status(404).json({
+        messageerror: "No products found for the given category",
+      });
+    }
+  } catch (error) {
+    console.log("Error in getting data from database", error);
+    return res.status(500).json({
+      messageerror: "There was an issue retrieving products",
+    });
+  }
+};
+
 //geta product
 
 export const getOneProduct = async (req: Request, res: Response) => {

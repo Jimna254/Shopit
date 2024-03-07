@@ -13,7 +13,9 @@ import { OrdersService } from '../../../Services/orders.service';
 export class AdminOrdersViewComponent implements OnInit {
   ordersArr: any[] = [];
 
-  constructor(private orders: OrdersService) {}
+  constructor(private orders: OrdersService) {
+    this.fetchOrders();
+  }
   ngOnInit() {
     this.fetchOrders();
   }

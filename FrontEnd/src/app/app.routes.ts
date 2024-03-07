@@ -57,9 +57,9 @@ export const routes: Routes = [
   },
   { path: 'navbar', component: NavbarComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'product', component: ViewPageComponent },
+  { path: 'product/:id', component: ViewPageComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: 'profile/:id', component: ProfileComponent },
+  { path: 'shop/:id', component: ShopComponent },
   { path: '', component: LandingComponent },
 ];

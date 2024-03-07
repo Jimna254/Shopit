@@ -1,19 +1,19 @@
 <nav>
-    <img src="../../assets/Logo.png" alt="logo">
-    <div class="search">
-        <input type="text" placeholder="Search products">
-        <label for="">Search</label>
-    </div>
-    <div class="Lists">
-        <li class="name" routerLink="/register">Register</li>
-        <li class="shop" routerLink="/login">Login</li>
-        <li class="cart" routerLink="/cart">Cart</li>
-    </div>
+  <img src="../../assets/Logo.png" alt="logo" />
+  <div class="search">
+    <input type="text" placeholder="Search products" />
+    <label for="">Search</label>
+  </div>
+  <div class="Lists">
+    <li class="name" routerLink="/register">Register</li>
+    <li class="shop" routerLink="/login">Login</li>
+    <li class="cart" routerLink="/cart">Cart</li>
+  </div>
 </nav>
-<hr>
+<hr />
 <section>
- <div class="parent">
-     <div class="caroussel">
+  <div class="parent">
+    <div class="caroussel">
       <div class="caroussel-inner" #carousselInner>
         <img src="../../assets/Deals 2.jpeg" alt="This is an image" />
         <img src="../../assets/Deals.jpeg" alt="This is an image" />
@@ -21,17 +21,17 @@
         <img src="../../assets/Deals 4.jpeg" alt="This is an image" />
       </div>
       <button class="prev" (click)="prevSlide()">&#8656;</button>
-  <button class="next" (click)="nextSlide()">&#8658;</button>
+      <button class="next" (click)="nextSlide()">&#8658;</button>
     </div>
-    </div>
-   <div class="main">
+  </div>
+  <div class="main">
     <!-- <h1 class="categ">Categories</h1> -->
     <!-- categories -->
     <div class="cards">
       <h2>Electronics</h2>
       <hr />
       <img src="../../assets/Electronics.jpg" alt="" />
-      <button routerLink="product">Shop Now</button>
+      <!-- <button routerLink="product">Shop Now</button> -->
     </div>
 
     <!-- accessories -->
@@ -39,7 +39,6 @@
       <h2>Apparel& Accessories</h2>
       <hr />
       <img src="../../assets/Fashion.jpg" alt="" />
-      <button>Shop Now</button>
     </div>
 
     <!-- Beauty -->
@@ -47,7 +46,6 @@
       <h2>Health& Beauty</h2>
       <hr />
       <img src="../../assets/Health&Beauty.jpg" alt="" />
-      <button>Shop Now</button>
     </div>
 
     <!-- Furniture -->
@@ -55,7 +53,7 @@
       <h2>Furniture</h2>
       <hr />
       <img src="../../assets/Furniture.jpg" alt="" />
-      <button>Shop Now</button>
+      <!-- <button>Shop Now</button> -->
     </div>
 
     <!-- KITCHEN -->
@@ -63,11 +61,11 @@
       <h2>Kitchen Appliances</h2>
       <hr />
       <img src="../../assets/Kitchen-Appliances.jpg" alt="" />
-      <button>Shop Now</button>
+      <!-- <button>Shop Now</button> -->
     </div>
   </div>
 
-  <div class="products">
+  <!-- <div class="products">
     <div class="product">
         <img src="../../../assets/Kettle.jpg" alt="">
         <p class="title">Kettles</p>
@@ -104,6 +102,6 @@
         <img src="../../../assets/Kettle.jpg" alt="">
         <p class="title">Kettles</p>
       </div>
-  </div>
+  </div> -->
 </section>
 <app-footer></app-footer>

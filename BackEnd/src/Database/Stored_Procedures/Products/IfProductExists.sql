@@ -4,5 +4,5 @@ CREATE OR ALTER PROCEDURE IfProductExists
 AS
 BEGIN
     
-    SELECT * FROM Products WHERE productname = @productname
+    SELECT * FROM Products WHERE productname = @productname AND isdeleted = 0;
 END;

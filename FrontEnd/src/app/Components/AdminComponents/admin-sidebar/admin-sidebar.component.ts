@@ -10,6 +10,12 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class AdminSidebarComponent {
 
+  constructor(private  router: Router) {}
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
+
   
 
 }
