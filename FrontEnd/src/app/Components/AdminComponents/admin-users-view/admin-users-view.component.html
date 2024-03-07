@@ -29,9 +29,18 @@
               style="color: rgb(255, 187, 0)"
             ></i>
           </button>
-          <button class="btnDelete" (click)="deleteUser(user.user_id)">
+          <button class="btnDelete" (click)="openPopup()">
             <i class="fa-solid fa-trash" style="color: rgb(255, 0, 0)"></i>
           </button>
+
+           <div class="popup" *ngIf="isPopupOpen">
+            <img src="../../../../assets/Logo.png" />
+            <h3>You are about to delete this item</h3>
+            <p>Are you sure you want to delete  {{user.Name}}?</p>
+            <button type="button" (click)="deleteUser(user.user_id)">
+              DELETE
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>

@@ -19,7 +19,7 @@
         <td>
           <img
             src="{{ category.image }}"
-            alt="{{ category.categoryname }}"
+            alt="{{ category.categoryname}}"
             class="product-image"
           />
         </td>
@@ -36,10 +36,19 @@
           </button>
           <button
             class="btnDelete"
-            (click)="deleteCategory(category.category_id)"
+            (click)="openPopup()"
           >
             <i class="fa-solid fa-trash" style="color: rgb(255, 0, 0)"></i>
           </button>
+
+            <div class="popup" *ngIf="isPopupOpen">
+            <img src="../../../../assets/Logo.png" />
+            <h3>You are about to delete this item</h3>
+            <p>Are you sure you want to delete  {{category.Name}}?</p>
+            <button type="button" (click)="deleteCategory(category.category_id)">
+              DELETE
+            </button>
+            </div>
         </td>
       </tr>
     </tbody>

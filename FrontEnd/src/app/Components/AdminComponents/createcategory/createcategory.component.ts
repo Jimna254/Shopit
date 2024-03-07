@@ -43,6 +43,7 @@ export class CreatecategoryComponent {
             if (Res.message) {
               this.visible2 = true;
               this.sucessMsg = Res.message;
+              
               setTimeout(() => {
                 this.visible2 = false;
               }, 3000);

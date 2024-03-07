@@ -70,7 +70,7 @@
 
 .successmsg {
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 1rem;
@@ -79,4 +79,5 @@
   color: #22c55e;
   font-weight: bold;
   background-color: #d1fae5;
+  width: 80vw;
 }

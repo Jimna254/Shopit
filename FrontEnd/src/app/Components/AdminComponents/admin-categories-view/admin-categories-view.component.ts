@@ -37,4 +37,10 @@ export class AdminCategoriesViewComponent implements OnInit {
       this.fetchCategories();
     });
   }
+
+  isPopupOpen: boolean = false;
+
+  openPopup() {
+    this.isPopupOpen = true;
+  }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../../Services/products.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-adminupdateproduct',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './adminupdateproduct.component.html',
   styleUrl: './adminupdateproduct.component.css',
 })

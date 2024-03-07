@@ -35,4 +35,10 @@ export class AdminUsersViewComponent {
       this.fetchUsers();
     });
   }
+
+  isPopupOpen: boolean = false;
+
+  openPopup() {
+    this.isPopupOpen = true;
+  }
 }

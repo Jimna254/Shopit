@@ -5,9 +5,9 @@ dotenv.config({ path: "../../.env" });
 
 export const sqlConfig = {
   user: process.env.DB_USER || "sa",
-  password: process.env.DB_PASSWORD || "@Stockholm01",
+  password: process.env.DB_PASSWORD || "37853801",
   database: process.env.DB_NAME || "Shopit",
-  server: process.env.DB_SERVER || "DESKTOP-KDHQCIN",
+  server: process.env.DB_SERVER || "DESKTOP-QO3AGRF",
 
   SECRET: "IUTR87GMHXLYNR",
 

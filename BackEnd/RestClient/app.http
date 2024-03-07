@@ -3,10 +3,10 @@ POST http://localhost:3110/users
 Content-Type: application/json
 
 {
-    "Fname": "James",
-    "Lname":"Kariuki",
-    "email": "devjameskw@gmail.com",
-    "phone_number": "05678899",
+    "Fname": "Sharon",
+    "Lname":"Cherotich",
+    "email": "sharoncherotich112@gmail.com",
+    "phone_number": "123456789",
     "password": "123456789"
    
 }
@@ -17,7 +17,7 @@ Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk0OTMyNzQsImV4cCI6MTcwOTgzODg3NH0.hLvrILEbp1UgNTKjCjdrKHi-5bVbAZR9x6zmSO8VIIw
 
 ### Get One
-GET http://localhost:3110/users/2deb31ed-d2d3-44f9-9412-d5119e9a59cd
+GET http://localhost:3110/users/6ee1118f-e6ce-4a3e-bffc-1c89bb0f6d60
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmRlYjMxZWQtZDJkMy00NGY5LTk0MTItZDUxMTllOWE1OWNkIiwiZW1haWwiOiJkZXZqYW1lc2t3QGdtYWlsLmNvbSIsIkZuYW1lIjoiSmFtZXMiLCJyb2xlIjoiYWRtaW4iLCJpc2RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDk0OTMyNzQsImV4cCI6MTcwOTgzODg3NH0.hLvrILEbp1UgNTKjCjdrKHi-5bVbAZR9x6zmSO8VIIw
 ### Update a user

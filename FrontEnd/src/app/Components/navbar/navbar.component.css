@@ -35,11 +35,53 @@ li {
   font-weight: bold;
   cursor: pointer;
 }
-li:hover {
+.name:hover,
+.shop:hover,
+.cart:hover,
+.order:hover {
   color: #eebd0a;
   text-decoration: underline;
   cursor: pointer;
 }
-.logout {
+.logout:hover {
   color: red;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .Lists {
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .search {
+    visibility: hidden;
+  }
+
+  .search > input {
+    width: calc(
+      10% - 20px
+    ); /* Adjusted to accommodate label width and padding */
+  }
+
+  .search > label {
+    border-radius: 5px;
+    margin-left: 0;
+    margin-top: 10px;
+    /* width: 30px; Adjusted width for label */
+  }
+
+  img {
+    width: 30px;
+  }
+
+  .Lists > li {
+    display: flex;
+    font-size: 12px;
+  }
 }
