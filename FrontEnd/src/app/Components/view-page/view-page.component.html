@@ -1,13 +1,14 @@
 <app-navbar> </app-navbar>
 <section>
   <div class="product">
+    <div *ngIf="visible" class="successmsg">{{ successMessage }}</div>
     <div class="pics">
       <div class="mainpic">
-        <img src="../../assets/Kettle.jpg" alt="" />
+        <img src="{{ product.image }}" alt="" />
       </div>
     </div>
     <div class="description">
-      <h1>Electric Kettle- 2200w</h1>
+      <h1>{{ product.product_name }}</h1>
       <ul>
         <li>Flat heating element for fast boiling</li>
         <li>Micro-mesh filter captures tiny limescale particles</li>
@@ -21,17 +22,17 @@
         <li>Cord winder for easy adjustment and storage</li>
         <p>Warranty: 12 months</p>
       </ul>
-      <button routerLink="/cart">Add to cart</button>
+      <button (click)="createCartNow(product.product_id)">Add to cart</button>
     </div>
   </div>
-  <div class="similar">
-      <h1>Similar Products</h1>
-      <div class="cards">
-        <h2>Electric Kettle- 2200w</h2>
-        <img src="../../../assets/Kettle.jpg" alt="">
-        <p>Kshs 2200</p>
-        <button>Shop Now</button>
-      </div>
+  <!-- <div class="similar">
+    <h1>Similar Products</h1>
+    <div class="cards">
+      <h2>Electric Kettle- 2200w</h2>
+      <img src="../../../assets/Kettle.jpg" alt="" />
+      <p>Kshs 2200</p>
+      <button>Shop Now</button>
     </div>
+  </div> -->
 </section>
 <app-footer></app-footer>

@@ -25,6 +25,18 @@ export class ProductsService {
     });
   }
 
+  getProductsbyCategorgoryId(id: string) {
+    return this.http.get<productsResponse>(
+      `http://localhost:3110/products/prodbycategory/${id}`,
+      {
+        headers: new HttpHeaders({
+          'Content-type': 'application/json',
+          token: this.token,
+        }),
+      }
+    );
+  }
+
   deleteProduct(id: string) {
     return this.http.delete<{ message: string; error: string }>(
       `http://localhost:3110/products/delete/${id}`,

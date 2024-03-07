@@ -47,7 +47,7 @@ img {
   display: flex;
   gap: 30px;
   padding: 30px;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 15px;
 }
 .categories {
@@ -75,7 +75,7 @@ img {
   display: flex;
   padding: 40px;
   justify-content: space-around;
-  overflow-x: visible;
+  overflow-x:  visible;
   overflow: hidden;
   flex-wrap: wrap;
 }

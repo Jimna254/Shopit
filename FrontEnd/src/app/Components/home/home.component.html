@@ -1,34 +1,17 @@
-<nav>
-  <img src="../../assets/Logo.png" alt="logo" />
-  <div class="search">
-    <input type="text" placeholder="Search products" />
-    <label for="">Search</label>
-  </div>
-  <div class="lists">
-    <li class="name"><i class="fa-regular fa-user"></i> Birgen</li>
-    <li class="shop">Shop</li>
-    <li class="cart">Cart</li>
-    <li class="logout"><i class="fa-solid fa-power-off"></i> LOGOUT</li>
-  </div>
-</nav>
+<app-navbar> </app-navbar>
 <hr />
 <section>
   <div class="display">
-    <div class="categories">
+    <div class="categories" style="overflow-y: scroll; height: 40%">
       <h1>CATEGORIES</h1>
       <hr />
-      <li><i class="fa-solid fa-lightbulb"></i> Electronics</li>
-      <li><i class="fa-solid fa-shirt"></i> Apparels & Accessories</li>
-      <li><i class="fa-solid fa-eye-dropper"></i> Health & Beauty</li>
+      <li *ngFor="let category of categoriesArr">
+        <i class="fa-solid fa-couch"></i>{{ category.categoryname }}
+      </li>
+      <!-- <li><i class="fa-solid fa-shirt"></i> Apparels & Accessories</li>
+      <li>Health & Beauty</li>
       <li><i class="fa-solid fa-couch"></i> Furniture</li>
-      <li><i class="fa-solid fa-kitchen-set"></i> Kitchen Appliances</li>
-
-
-      <li><i class="fa-solid fa-lightbulb"></i> Electronics</li>
-      <li><i class="fa-solid fa-shirt"></i> Apparels & Accessories</li>
-      <li><i class="fa-solid fa-eye-dropper"></i> Health & Beauty</li>
-      <li><i class="fa-solid fa-couch"></i> Furniture</li>
-      <li><i class="fa-solid fa-kitchen-set"></i> Kitchen Appliances</li>
+      <li><i class="fa-solid fa-kitchen-set"></i> Kitchen Appliances</li> -->
     </div>
     <div class="caroussel">
       <div class="caroussel-inner" #carousselInner>
@@ -46,45 +29,25 @@
 
   <h1 class="h1" style="text-align: center">CATEGORIES</h1>
   <div class="main">
-    <!-- categories -->
-    <div class="cards">
-      <h2>Electronics</h2>
+    <div class="cards" *ngFor="let category of paginatedArr">
+      <h2>{{ category.categoryname }}</h2>
       <hr />
-      <img src="../../assets/Electronics.jpg" alt="" />
-      <button routerLink="/product">Shop Now</button>
-    </div>
-
-    <!-- accessories -->
-    <div class="cards">
-      <h2>Apparel& Accessories</h2>
-      <hr />
-      <img src="../../assets/Fashion.jpg" alt="" />
-      <button>Shop Now</button>
-    </div>
-
-    <!-- Beauty -->
-    <div class="cards">
-      <h2>Health& Beauty</h2>
-      <hr />
-      <img src="../../assets/Health&Beauty.jpg" alt="" />
-      <button>Shop Now</button>
-    </div>
-
-    <!-- Furniture -->
-    <div class="cards">
-      <h2>Furniture</h2>
-      <hr />
-      <img src="../../assets/Furniture.jpg" alt="" />
-      <button>Shop Now</button>
-    </div>
-
-    <!-- KITCHEN -->
-    <div class="cards">
-      <h2>Kitchen Appliances</h2>
-      <hr />
-      <img src="../../assets/Kitchen-Appliances.jpg" alt="" />
-      <button>Shop Now</button>
+      <img src="{{ category.image }}" />
+      <button routerLink="/product/{{ category.category_id }}">Shop Now</button>
     </div>
   </div>
+  <div class="pagination-controls">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+      << Prev
+    </button>
+
+    <button
+      (click)="goToPage(currentPage + 1)"
+      [disabled]="currentPage === maxPage()"
+    >
+      Next >>
+    </button>
+  </div>
+  <div class="pageno">Page {{ currentPage }} / {{ maxPage() }}</div>
 </section>
 <app-footer></app-footer>

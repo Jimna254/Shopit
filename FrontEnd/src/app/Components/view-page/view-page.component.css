@@ -69,13 +69,16 @@ ul > p {
   align-items: center;
 }
 .cards > h2 {
+.cards > h2 {
   color: #eebd0a;
 }
+.cards > img {
 .cards > img {
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
+.cards > button {
 .cards > button {
   padding: 10px;
   background-color: #eebd0a;
@@ -84,9 +87,25 @@ ul > p {
   border-radius: 5px;
 }
 .cards > p {
+  font-size: 20px;
+.cards > p {
   font-size: 15px;
   font-weight: bold;
 }
+
+.successmsg {
+  text-align: center;
+  font-size: 0.875rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  color: #22c55e;
+  font-weight: bold;
+  background-color: #d1fae5;
+}
+
 
 @media (max-width: 800px) {
   section {

@@ -4,5 +4,5 @@ CREATE OR ALTER PROCEDURE IfCategoryExists
 AS
 BEGIN
     
-    SELECT * FROM Categories WHERE categoryname = @categoryname
+    SELECT * FROM Categories WHERE categoryname = @categoryname AND isdeleted = 0;
 END;
