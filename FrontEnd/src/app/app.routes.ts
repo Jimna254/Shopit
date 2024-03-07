@@ -21,6 +21,7 @@ import { AdminupdateproductComponent } from './Components/AdminComponents/adminu
 import { AddProductComponent } from './Components/AdminComponents/add-product/add-product.component';
 import { CategoryupdateComponent } from './Components/AdminComponents/categoryupdate/categoryupdate.component';
 import { CreatecategoryComponent } from './Components/AdminComponents/createcategory/createcategory.component';
+import { WildcardComponent } from './Components/wildcard/wildcard.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -62,4 +63,5 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'shop', component: ShopComponent },
   { path: '', component: LandingComponent },
+  { path: '**', component: WildcardComponent },
 ];

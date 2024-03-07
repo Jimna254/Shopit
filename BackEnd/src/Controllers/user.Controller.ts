@@ -63,7 +63,7 @@ export const registerUser = async (req: Request, res: Response) => {
     }
   } catch (err) {
     console.log(err);
-    return res.sendStatus(500).json({ message: err });
+    // return res.sendStatus(500).json({ message: err });
   }
 };
 //get all users

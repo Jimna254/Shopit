@@ -15,7 +15,7 @@
       <!-- FIRST NAME -->
       <div class="input-div">
         <label for="firstName">First name :</label> <br />
-        <input type="text" formControlName="Fname" />
+        <input type="text" formControlName="Fname" data-cy="fname-input" />
         <div
           *ngIf="
             registerForm.get('Fname')?.invalid &&
@@ -29,7 +29,7 @@
       <!-- LAST NAME -->
       <div class="input-div">
         <label for="lastName">Last name :</label> <br />
-        <input type="text" formControlName="Lname" />
+        <input type="text" formControlName="Lname" data-cy="lname-input" />
         <div
           *ngIf="
             registerForm.get('lastName')?.invalid &&
@@ -44,7 +44,7 @@
       <!-- EMAIL ADDRESS  -->
       <div class="input-div">
         <label for="email">Email :</label> <br />
-        <input type="email" formControlName="email" />
+        <input type="email" formControlName="email" data-cy="email-input" />
         <div
           *ngIf="
             registerForm.get('email')?.invalid &&
@@ -70,7 +70,7 @@
       <!-- PHONE NUMBER -->
       <div class="input-div">
         <label for="phoneNumber">Phone Number :</label> <br />
-        <input type="text" formControlName="phone_number" />
+        <input type="text" formControlName="phone_number" data-cy="phone_number-input" />
         <div
           *ngIf="
             registerForm.get('phone_number')?.invalid &&
@@ -85,7 +85,7 @@
       <!-- PASSWORD -->
       <div class="input-div">
         <label for="password">Password :</label> <br />
-        <input type="password" formControlName="password" />
+        <input type="password" formControlName="password" data-cy="password-input" />
         <div
           *ngIf="
             registerForm.get('password')?.invalid &&
@@ -109,7 +109,7 @@
       </div>
 
       <!-- SUBMIT -->
-      <button type="submit" class="submit">Register</button>
+      <button type="submit" class="submit" data-cy="create-account-link">Register</button>
     </form>
   </div>
   <p>Have an account? <a routerLink="/login">Login here</a></p>

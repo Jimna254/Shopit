@@ -3,8 +3,8 @@ POST http://localhost:3110/categories
 Content-Type: application/json
 
 {
-    "categoryname": "Shoes", 
-    "image": "https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg"
+    "categoryname": "Electronics", 
+    "image": "https://media.istockphoto.com/id/178716575/photo/mobile-devices.jpg?s=612x612&w=0&k=20&c=9YyINgAbcmjfY_HZe-i8FrLUS43-qZh6Sx6raIc_9vQ="
 }
 
 ### Get all Categories

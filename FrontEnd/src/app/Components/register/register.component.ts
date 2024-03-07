@@ -47,17 +47,20 @@ export class RegisterComponent {
 
     this.authService.registerUser(this.registerForm.value).subscribe((res) => {
       console.log(res);
-      setTimeout(() => {
         if (res.message) {
           this.success = true;
           this.successMsg = res.message;
-
-          this.router.navigate(['login']);
+          setTimeout(() => {
+            this.success= false;
+            this.router.navigate(['login']);
+          }, 2000);
         } else if (res.messageerror) {
           this.error = true;
           this.errorMsg = res.messageerror;
+          setTimeout(() => {
+            this.error= false;
+          }, 2000);
         }
-      }, 2000);
     });
   }
 }

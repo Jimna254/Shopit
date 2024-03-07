@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../Services/products.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { categoriesResponse } from '../../../Interfaces/categoryInterface';
+import { CategoriesService } from '../../../Services/categories.service';
 
 @Component({
   selector: 'app-admin-products-view',
@@ -35,5 +37,11 @@ export class AdminProductsViewComponent implements OnInit {
       console.log(res);
       this.fetchProducts();
     });
+  }
+
+  isPopupOpen: boolean = false;
+
+  openPopup() {
+    this.isPopupOpen = true;
   }
 }
