@@ -58,12 +58,12 @@ export const registerUser = async (req: Request, res: Response) => {
 
       console.log(result);
       return res.status(201).json({
-        message: `${Fname} Account was created succesfully.`,
+        message: `Account was created succesfully.`,
       });
     }
   } catch (err) {
     console.log(err);
-    // return res.sendStatus(500).json({ message: err });
+    return res.sendStatus(500).json({ message: err });
   }
 };
 //get all users

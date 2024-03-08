@@ -68,17 +68,17 @@ ul > p {
   border-radius: 10px;
   align-items: center;
 }
-.cards > h2 {
+
 .cards > h2 {
   color: #eebd0a;
 }
-.cards > img {
+
 .cards > img {
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-.cards > button {
+
 .cards > button {
   padding: 10px;
   background-color: #eebd0a;
@@ -86,8 +86,7 @@ ul > p {
   border: none;
   border-radius: 5px;
 }
-.cards > p {
-  font-size: 20px;
+
 .cards > p {
   font-size: 15px;
   font-weight: bold;

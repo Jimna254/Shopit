@@ -1,4 +1,5 @@
 import mssql from "mssql";
+import bcrypt from 'bcrypt';
 import {
   registerUser,
   getOneUser,
@@ -14,23 +15,27 @@ describe("Account created successfully", () => {
 
   beforeEach(() => {
     res = {
-      status: jest.fn().mockReturnThis(),
+      sendStatus: jest.fn().mockReturnThis(),
       json: jest.fn().mockReturnThis(),
     };
   });
 
-  it("Account created successfuly", async () => {
+  it("successfully registers a user", async () => {
     const req = {
       body: {
-        Fname: "Sharon",
-        Lname: "Cherotich",
-        email: "sharon@gmail.com",
-        phone_number: "0716013980",
-        password: "test12345",
+        Fname: "admin",
+        Lname: "admin",
+        email: "admin@yopmail.com",
+        phone_number: "0787543219",
+        password: "admin",
       },
     };
-    
-    const mockedInput = jest.fn().mockReturnThis;
+
+    jest
+      .spyOn(bcrypt, "hash")
+      .mockResolvedValueOnce("HashedPwdkjshghgksjgkj" as never);
+
+    const mockedInput = jest.fn().mockReturnThis(); //makes it chainable
 
     const mockedExecute = jest.fn().mockResolvedValue({ rowsAffected: [1] });
 
@@ -38,20 +43,21 @@ describe("Account created successfully", () => {
       input: mockedInput,
       execute: mockedExecute,
     };
-    
+
     const mockedPool = {
       request: jest.fn().mockReturnValue(mockedRequest),
     };
+
     jest.spyOn(mssql, "connect").mockResolvedValue(mockedPool as never);
 
     await registerUser(req as any, res);
 
     expect(res.json).toHaveBeenCalledWith({
-      message: "Sharon Account was created successfully",
-      
+      message: "Account was created successfully.",
     });
     expect(res.status).toHaveBeenCalledWith(200);
   });
+
 });
 
 // test for getAllUsers
@@ -82,7 +88,7 @@ describe('Get all users', () => {
       
       await getUsers(req as any, res)
       
-      // expect(res.json).toHaveBeenCalledWith({success: "No Users"})
+      expect(res.json).toHaveBeenCalledWith({message: "No Users"})
       expect(res.status).toHaveBeenCalledWith(200)
       
     })
@@ -108,8 +114,8 @@ describe("Gets a single user", () => {
   });
 
   it("Successful fetch one user", async () => {
-    const mockedResult = [
-      {
+    const mockedResult = {
+      user:{
         id: "353545-43495835-458347575",
         Fname: "Amanda",
         Lname: "Chepkoech",
@@ -117,14 +123,14 @@ describe("Gets a single user", () => {
         phone_number: "071738438",
         password: "test12345",
       },
-    ];
-    // console.log("This is working here", +mockedResult)
+};
+    console.log("This is working here", mockedResult)
     
     const mockedInput = jest.fn().mockReturnThis();
 
     const mockedExecute = jest
       .fn()
-      .mockResolvedValue({ recordset: mockedResult[0] });
+      .mockResolvedValue({ recordset: mockedResult });
 
     const mockedRequest = {
       input: mockedInput,
