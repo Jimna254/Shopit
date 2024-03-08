@@ -94,8 +94,9 @@
   object-fit: cover;
   border-radius: 5px;
 }
+
 .popup {
-   background-color: #fff5b488;
+  background-color: #fff5b488;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,11 +113,10 @@
 }
 
 .popup img {
-  width: 50px;
+  width: 70px;
   margin-top: -50px;
   border-radius: 50%;
 }
-
 .popup button {
   padding: 10px;
   background-color: #bea925;

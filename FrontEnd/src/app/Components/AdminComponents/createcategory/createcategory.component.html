@@ -22,18 +22,24 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="label">Image:</label>
-      <input type="text" formControlName="image" class="input" />
-      <div
-        *ngIf="
-          addCategoryForm.get('image')?.invalid &&
-          addCategoryForm.get('image')?.touched
-        "
-        class="error-message"
-      >
-        Category Image is required
+    <div class="image-upload-section">
+      <label for="categoryImage">Category Image</label>
+      <div id="drop-area" (click)="fileInput.click()">
+        <i
+          class="fa-solid fa-image"
+          style="color: rgb(255, 174, 0); font-size: 6rem"
+        ></i>
+        <p>Drop an image here or browse</p>
       </div>
+      <input
+        type="file"
+        #fileInput
+        id="fileInput"
+        name="image"
+        accept="image/*"
+        required
+        (change)="uploadImage($event)"
+      />
     </div>
 
     <div class="form-group flex items-center justify-between">
