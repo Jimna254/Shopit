@@ -2,6 +2,7 @@ section {
   display: flex;
   justify-content: space-around;
   gap: 40px;
+  font-size: 20px;
   margin: 60px;
 }
 .product {
@@ -9,7 +10,7 @@ section {
   justify-content: space-between;
   padding: 30px;
   background-color: #d9d9d9;
-  width: 50vw;
+  gap: 20px;
   align-items: center;
   border-radius: 10px;
 }
@@ -49,7 +50,7 @@ ul > p {
   font-weight: bold;
   font-size: 20px;
 }
-.similar {
+.similar  {
   display: flex;
   flex-direction: column;
   /* gap: 40px; */
@@ -58,7 +59,7 @@ ul > p {
   padding: 20px;
   border-radius: 10px;
 }
-.cards {
+.cards  {
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -70,7 +71,7 @@ ul > p {
 .cards > h2 {
   color: #eebd0a;
 }
-.cards > img {
+.cards > img  {
   width: 200px;
   object-fit: cover;
   border-radius: 10px;
@@ -82,8 +83,8 @@ ul > p {
   border: none;
   border-radius: 5px;
 }
-.cards > p {
-  font-size: 20px;
+.cards  > p  {
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -98,4 +99,21 @@ ul > p {
   color: #22c55e;
   font-weight: bold;
   background-color: #d1fae5;
+}
+
+
+@media (max-width: 800px) {
+  section {
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+  }
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+  .mainpic > img {
+  width: 150px;
+  border-radius: 5px;
+}
 }

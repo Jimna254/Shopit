@@ -9,13 +9,14 @@ export interface Cart {
 }
 
 export interface OneUsercartResponse {
-  cartDetails: [
+  Cartitems: [
     {
       cart_id: string;
       quantity: number;
       product_id: string;
       name: string;
       price: number;
+      
     }
   ];
   error: {

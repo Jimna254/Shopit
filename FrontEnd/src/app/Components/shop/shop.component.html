@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
-<section>
+<section
+  class="bookings-container"
+  *ngIf="productsArr.length > 0; else noProductsTemplate"
+>
   <div class="products">
     <h1>{{ Categoryname }}</h1>
     <div class="item" *ngFor="let product of productsArr">
@@ -18,3 +21,10 @@
   </div>
 </section>
 <app-footer></app-footer>
+
+<ng-template #noProductsTemplate>
+  <h1 style="margin: 2%; color: rgb(178, 209, 5)">
+    No Products Under this Category yet!
+  </h1>
+  <hr />
+</ng-template>

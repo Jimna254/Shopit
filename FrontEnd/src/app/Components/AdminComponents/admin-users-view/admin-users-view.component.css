@@ -29,6 +29,7 @@
 
 .actions {
   display: flex;
+  height: 60px;
   gap: 4px;
 }
 .actions > button {
@@ -39,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 }
 
 .table td.actions i.fa-solid {
@@ -46,4 +48,35 @@
 }
 .table td.actions button:hover {
   background-color: #f2f2f2; /* Example hover background color */
+}
+.popup {
+  background-color: #fff5b488;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  gap: 20px;
+}
+
+.popup img {
+  width: 70px;
+  margin-top: -50px;
+  border-radius: 50%;
+}
+
+.popup button {
+  padding: 10px;
+  background-color: #bea925;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }

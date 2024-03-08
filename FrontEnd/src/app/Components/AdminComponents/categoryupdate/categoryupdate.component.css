@@ -8,6 +8,7 @@
 .form-container {
   width: 40vw;
   padding: 16px;
+  margin: 5%;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
 }
@@ -43,8 +44,8 @@
 }
 
 .submit-button {
-  width: 150px;
-  max-width: 150px;
+  width: 92%;
+  max-width: 92%;
   padding: 8px;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,8 +53,9 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  align-self: center;
+  margin-top: 5%;
 }
-
 .submit-button:disabled {
   background-color: #cbd5e1;
   cursor: not-allowed;
@@ -79,4 +81,29 @@
   color: #22c55e;
   font-weight: bold;
   background-color: #d1fae5;
+}
+
+.image-upload-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload-section label {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.image-upload-section input {
+  display: none;
+}
+
+.image-upload-section #drop-area {
+  border: 2px dashed #ddd;
+  padding: 40px;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
 }

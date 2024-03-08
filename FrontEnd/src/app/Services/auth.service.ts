@@ -28,11 +28,6 @@ export class AuthService {
   }
 
   createCart(cart_details: any) {
-    const token = localStorage.getItem('token') as string;
-    const headers = new HttpHeaders({
-      'Content-type': 'application/json',
-      token,
-    });
     return this.http.post<{ message: string; error: string }>(
       'http://localhost:3110/cart',
 

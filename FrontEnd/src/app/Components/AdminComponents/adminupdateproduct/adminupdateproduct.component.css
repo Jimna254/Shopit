@@ -43,8 +43,8 @@
 }
 
 .submit-button {
-  width: 150px;
-  max-width: 150px;
+  width: 90%;
+  max-width: 90%;
   padding: 8px;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,8 +52,9 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  align-self: center;
+  margin-top: 5%;
 }
-
 .submit-button:disabled {
   background-color: #cbd5e1;
   cursor: not-allowed;
@@ -70,7 +71,7 @@
 
 .successmsg {
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 1rem;
@@ -79,4 +80,29 @@
   color: #22c55e;
   font-weight: bold;
   background-color: #d1fae5;
+  width: 80vw;
+}
+.image-upload-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload-section label {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.image-upload-section input {
+  display: none;
+}
+
+.image-upload-section #drop-area {
+  border: 2px dashed #ddd;
+  padding: 40px;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
 }

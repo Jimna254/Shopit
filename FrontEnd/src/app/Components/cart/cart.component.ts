@@ -3,11 +3,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../Services/cart.service';
 import { AuthService } from '../../Services/auth.service';
+import { CommonModule } from '@angular/common';
+import { deleteItemCart } from '../../Interfaces/cartInterface';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [NavbarComponent, RouterLink],
+  imports: [NavbarComponent, RouterLink, CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
@@ -29,6 +31,8 @@ export class CartComponent implements OnInit {
   id!: string;
   successMessage: string = '';
   errorMessage: string = '';
+
+  isSuccess = false;
   cartArr: any = [];
   ngOnInit(): void {
     this.fetchCart();
@@ -42,9 +46,9 @@ export class CartComponent implements OnInit {
           if (response && response.info && response.info.user_id) {
             this.cartService.getUserCart(response.info.user_id).subscribe({
               next: (OneUsercartResponse) => {
-                console.log(OneUsercartResponse.cartDetails);
-                this.cartArr = OneUsercartResponse.cartDetails || [];
-                if (OneUsercartResponse.cartDetails) {
+                console.log(OneUsercartResponse.Cartitems);
+                this.cartArr = OneUsercartResponse.Cartitems || [];
+                if (OneUsercartResponse.Cartitems) {
                   console.log('Cart loaded successfully');
                 } else if (OneUsercartResponse.error) {
                   console.error(
@@ -76,5 +80,28 @@ export class CartComponent implements OnInit {
     } else {
       console.error('Token not found in localStorage');
     }
+  }
+
+  deleteItemCart(id: string, product_id: string) {
+    console.log('delete Item function called with id:', id);
+
+    const details: deleteItemCart = {
+      cart_id: id,
+      product_id,
+    };
+
+    this.cartService.deleteItemCart(id, details).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.fetchCart();
+        this.successMessage = 'Product removed successfully.';
+        this.isSuccess = true;
+      },
+      error: (error) => {
+        console.error(error);
+        this.errorMessage = 'Failed to remove the product. Please try again.';
+        this.successMessage = '';
+      },
+    });
   }
 }
