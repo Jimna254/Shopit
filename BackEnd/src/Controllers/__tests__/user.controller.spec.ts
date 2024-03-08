@@ -1,5 +1,5 @@
 import mssql from "mssql";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 import {
   registerUser,
   getOneUser,
@@ -7,6 +7,8 @@ import {
   deleteUser,
   updateUser,
 } from "../user.Controller";
+import Connection from "../../DBHelper/dbhelper";
+jest.mock("../../DbHelper/dbhelper");
 
 //test for createUser
 
@@ -55,101 +57,174 @@ describe("Account created successfully", () => {
     expect(res.json).toHaveBeenCalledWith({
       message: "Account was created successfully.",
     });
-    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.status).toHaveBeenCalledWith(201);
   });
 
 });
 
-// test for getAllUsers
+//test for getAllUsers
 
-describe('Get all users', () => {
-    let res: any;
-    
-    beforeEach(() => {
-      res = {
-        status: jest.fn().mockReturnThis(),
-        json: jest.fn().mockReturnThis()
-      }
-    })
-    
-    it('Gets all users', async () => {
-      
-      const req = {}
-      const mockedExecute = jest.fn().mockResolvedValue({recordSet: [1]})
-      
-      const mockedRequest = {
-        execute: jest.fn().mockReturnValue(mockedExecute)
-      }
-      const mockedPool = {
-        request: jest.fn().mockReturnValue(mockedRequest)
-      }
-      
-      jest.spyOn(mssql, 'connect').mockResolvedValue(mockedPool as never)
-      
-      await getUsers(req as any, res)
-      
-      expect(res.json).toHaveBeenCalledWith({message: "No Users"})
-      expect(res.status).toHaveBeenCalledWith(200)
-      
-    })
-   
-})
-
-// test for getUser
-
-describe("Gets a single user", () => {
-  let req: any;
+describe("Get all users", () => {
   let res: any;
 
   beforeEach(() => {
-    req = {
-      params: {
-        id: "353545-43495835-458347575",
-      },
-    };
     res = {
-      json: jest.fn(),
       status: jest.fn().mockReturnThis(),
+      json: jest.fn().mockReturnThis(),
     };
   });
 
-  it("Successful fetch one user", async () => {
-    const mockedResult = {
-      user:{
-        id: "353545-43495835-458347575",
-        Fname: "Amanda",
-        Lname: "Chepkoech",
-        email: "amanda@gmail.com",
-        phone_number: "071738438",
-        password: "test12345",
-      },
-};
-    console.log("This is working here", mockedResult)
-    
-    const mockedInput = jest.fn().mockReturnThis();
-
-    const mockedExecute = jest
-      .fn()
-      .mockResolvedValue({ recordset: mockedResult });
-
-    const mockedRequest = {
-      input: mockedInput,
-      execute: mockedExecute,
+  it("Gets all users", async () => {
+    let expectedUser = {
+      users: [
+        {
+          user_id: "47e0ebef-877d-4094-b500-af340654ecc8",
+          Fname: "Kenny",
+          Lname: "Maina",
+          email: "kennynet66@gmail.com",
+          role: "user",
+          phone_number: "0700909090",
+          password:
+            "$2b$05$CuOaURVuIAad5uyYB.VhyOYMs9UyrvMrq0jeMs9R0piU27f3tUCuq",
+          created_at: "2024-03-05T00:00:00.000Z",
+          isdeleted: false,
+          isWelcomed: false,
+        },
+      ],
     };
 
-    const mockedPool = {
-      request: jest.fn().mockReturnValue(mockedRequest),
-    };
+    const req = {};
 
-    jest.spyOn(mssql, "connect").mockResolvedValue(mockedPool as never);
+          (Connection.execute as jest.Mock).mockResolvedValueOnce({
+            recordset: expectedUser.users
+          })
 
-    await getOneUser(req as any, res);
+    await getUsers(req as any, res);
 
-    expect(res.json).toHaveBeenCalledWith(mockedResult);
-    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith(expectedUser);
   });
 });
 
-// test for deleteUser
+//test for getUser
 
-// test for updateUser
+describe("Gets a single user", () =>{
+  let res: any;
+  let user: any
+
+  beforeEach(()=>{
+      res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn().mockReturnThis(),
+      };
+
+      user = {
+        user: [
+          {
+            id: "353545-43495835-458347575",
+            Fname: "Amanda",
+            Lname: "Chepkoech",
+            email: "amanda@gmail.com",
+            phone_number: "071738438",
+            password: "test12345",
+          },
+        ],
+      };
+  })
+
+    it("gets a single user", async()=>{
+
+      const req={
+        params:{
+          id:'353545-43495835-458347575'
+        }
+      };
+      (Connection.execute as jest.Mock).mockResolvedValueOnce({
+        recordset: user.user
+      })
+
+      await getOneUser(req as any, res)
+
+      expect(res.json).toHaveBeenCalledWith({user: user.user})
+    })
+  })
+
+
+//DELETE USER
+
+ describe("delete user", () =>{
+  let res: any;
+  let user: any
+
+  beforeEach(()=>{
+      res = {
+        status: jest.fn().mockReturnThis(),
+        json: jest.fn().mockReturnThis(),
+      };
+
+  })
+
+    it("delete a user", async()=>{
+
+      const req={
+        params:{
+          id:'353545-43495835-458347575'
+        }
+      };
+      (Connection.execute as jest.Mock).mockResolvedValueOnce({
+        // recordset: user
+      })
+
+      await deleteUser(req as any, res)
+
+      expect(res.json).toHaveBeenCalledWith({
+        message: "User Deleted Successfully",
+      });
+    })
+  })
+
+//UPDATES USER
+
+ describe("delete user", () => {
+   let res: any;
+   let user: any;
+
+   beforeEach(() => {
+     res = {
+       status: jest.fn().mockReturnThis(),
+       json: jest.fn().mockReturnThis(),
+     };
+      user = {
+        user: [
+          {
+            id: "353545-43495835-458347575",
+            Fname: "Amanda",
+            Lname: "Chepkoech",
+            email: "amanda@gmail.com",
+            phone_number: "071738438",
+          },
+        ],
+      };
+   });
+
+   it("updates a user", async () => {
+     const req = {
+       params: {
+         id: "353545-43495835-458347575",
+       },
+       body: {
+         Fname:"john",
+         Lname: "doe",
+         email:"johndoe@gmail.com",
+         phone_number:"12345678",
+       },
+     };
+     (Connection.execute as jest.Mock).mockResolvedValueOnce({
+     });
+
+     await updateUser(req as any, res);
+
+     expect(res.json).toHaveBeenCalledWith({
+       message: "User updated successfully",
+     });
+   });
+ });

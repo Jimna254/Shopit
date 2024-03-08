@@ -21,7 +21,7 @@ describe('Testing sigup functionality using fixtures', () => {
     cy.get('[data-cy="create-account-link"]')
       .click()
       .then((el) => {
-        cy.wait(1000);
+        cy.wait(2000);
         cy.visit('http://localhost:4200/login');
         cy.location('pathname').should('not.equal', '/register');
         cy.location('pathname').should('equal', '/login');
@@ -31,11 +31,22 @@ describe('Testing sigup functionality using fixtures', () => {
 });
 
 describe('Sending requests to register user using fixtures', () => {
+  let data2: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone_number: string;
+    password: string;
+  };
   beforeEach(() => {
+    cy.fixture('register2').then((info) => {
+     data2 = info;
+    });
+
     cy.visit('/register');
-    cy.intercept('POST', ' POST http://localhost:3110/users', {
+    cy.intercept('POST', 'http://localhost:3110/users', {
       body: {
-        message: 'User registered successfully',
+        message: 'Account was created succesfully.',
       },
     }).as('RequestToRegister');
   });
@@ -45,8 +56,7 @@ describe('Sending requests to register user using fixtures', () => {
     // }).as('RegisterRequest');
 
     cy.get('.submit').click();
-
-    cy.wait('@RequestToRegister', { requestTimeout: 10000 }).then(
+    cy.wait('@RequestToRegister', { requestTimeout: 5000 }).then(
       (interception) => {
         console.log('Intercepted request:', interception.request);
         console.log('Intercepted response:', interception.response);
