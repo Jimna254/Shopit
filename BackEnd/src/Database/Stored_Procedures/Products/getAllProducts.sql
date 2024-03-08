@@ -19,3 +19,5 @@ SELECT
         INNER JOIN Categories C ON P.category_id = C.category_id
     WHERE 
         P.isDeleted = 0
+
+   

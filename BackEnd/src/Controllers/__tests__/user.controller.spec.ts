@@ -184,7 +184,7 @@ describe("Gets a single user", () =>{
 
 //UPDATES USER
 
- describe("delete user", () => {
+ describe("updates user", () => {
    let res: any;
    let user: any;
 

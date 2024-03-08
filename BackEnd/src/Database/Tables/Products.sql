@@ -19,3 +19,4 @@ ALTER TABLE Products ALTER COLUMN quantity INT;
 ALTER TABLE Products ALTER COLUMN price DECIMAL(10, 2);
 
 
+
